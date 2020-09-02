@@ -1,0 +1,51 @@
+.cta-section {
+  width: 100%;
+  position: relative;
+}
+
+.primary-header {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  line-height: 1;
+  display: block;
+  padding-top: 20rem;
+  padding-left: 10rem;
+  color: white;
+}
+
+.shop-btn {
+  display: block;
+  margin-top: 5rem;
+  margin-left: 10rem;
+  text-decoration: none;
+  width: 42rem;
+}
+
+.social-media-icons {
+  float: right;
+  align-content: center;
+  transform: translateY(-75%);
+  padding-right: 3rem;
+}
+
+.social-icon {
+  display: block;
+  padding-bottom: 5rem;
+  cursor: pointer;
+}
+
+.cta-bg-img {
+  width: 100%;
+  filter: brightness(80%);
+}
+
+.cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
+}

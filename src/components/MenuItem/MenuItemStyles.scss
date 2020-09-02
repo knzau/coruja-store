@@ -1,0 +1,78 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+    &.background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+    &.content {
+      opacity: 0.9;
+    }
+  }
+  &.womens {
+    min-width: 49%;
+    height: 38rem;
+    float: right;
+    margin-bottom: 1%;
+    transform: translateX(2%);
+  }
+
+  &.mens {
+    transform: translateY(-14rem);
+    min-width: 50%;
+    height: 38rem;
+  }
+  &.hats {
+    min-width: 50%;
+    height: 24rem;
+    float: left;
+  }
+
+  &.sneakers {
+    min-width: 49%;
+    height: 24rem;
+    float: right;
+    transform: translateX(2%);
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .content {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    transform: translate(-15rem, 0);
+
+    .menu-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 3rem;
+      color: white;
+      background-color: rgb(58, 58, 58);
+      opacity: 0.7;
+      padding: 0 25px;
+      margin-bottom: 3rem;
+    }
+
+    .subtitle {
+      font-weight: lighter;
+      font-size: 16px;
+    }
+    .menu-buy-now {
+      color: white;
+      background: rgba(#3a3a3a, 0.6);
+    }
+  }
+}
