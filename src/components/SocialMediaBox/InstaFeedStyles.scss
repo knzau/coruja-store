@@ -1,0 +1,45 @@
+#instafeed {
+  display: grid;
+  grid-template-columns: (1fr 1fr 1fr);
+  grid-template-rows: (1fr 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.text-wrapper {
+  position: absolute;
+  z-index: 3;
+  width: 15rem;
+  background-color: white;
+  height: 15rem;
+  border-radius: 7.5rem;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.9;
+}
+.home-store {
+  color: #3a3a3a;
+  background-position: center;
+  z-index: 3;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+#instafeed a {
+  display: block;
+}
+
+#instafeed img {
+  display: block;
+  width: 100%;
+}

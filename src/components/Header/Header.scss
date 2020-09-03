@@ -14,19 +14,24 @@
     list-style: none;
     display: inline-block;
     cursor: pointer;
-    color: #3a3a3a;
+    color: #bababa;
     text-transform: uppercase;
+    font-weight: 700;
 
     &:not(:last-child) {
       padding-right: 5rem;
     }
 
     &:hover {
-      color: #bababa;
+      color: #3a3a3a;
       border-bottom-width: 1px;
     }
   }
 
+  p {
+    color: #3a3a3a;
+    font-weight: 700;
+  }
   .logo-box {
     width: 10%;
     transform: translateY(-1.5rem);
@@ -43,9 +48,10 @@
   }
 
   .icons {
-    width: 6rem;
+    width: 6.5rem;
     padding-left: 4rem;
     float: right;
     cursor: pointer;
+    transform: translateY(-5px);
   }
 }

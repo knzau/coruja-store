@@ -12,6 +12,10 @@ const buttonStyles = css`
   }
 `;
 
+const socialMediaBtnStyles = css`
+
+`;
+
 const invertedButtonStyles = css`
     background-color: white;
     color: black;
@@ -37,6 +41,9 @@ const googleSignInStyles = css`
 const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
+  }
+  else if (props.socialMediaBtn) {
+    return socialMediaBtnStyles;
   }
 
   return props.inverted ? invertedButtonStyles : buttonStyles;

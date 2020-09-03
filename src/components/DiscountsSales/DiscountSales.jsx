@@ -22,7 +22,7 @@ class DiscountSales extends Component {
 
           <div className="best-selling--wrapper">
             <h4 className="header-small">best selling</h4>
-            <h1 className="sale-text">
+            <h1 className="header-medium">
               shoes <br></br>up to 70% off
             </h1>
             <a href="#shoes" className="btn-text buy-now">
@@ -34,7 +34,7 @@ class DiscountSales extends Component {
         <div className="right-wrapper">
           <div className="top-discount--wrapper">
             <h4 className="header-small margin-bottom-huge">Top Discounts</h4>
-            <h1 className="sale-text">
+            <h1 className="header-medium">
               <span>Save up to</span>
               <br></br> 50% off
             </h1>
@@ -55,7 +55,9 @@ class DiscountSales extends Component {
               className="newsletter-subscibe"
               required
             />
-            <button className="email-label" htmlFor="email-subscribe">Subscribe</button>
+            <button className="email-label" htmlFor="email-subscribe">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
