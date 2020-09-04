@@ -50,8 +50,8 @@ const getButtonStyles = (props) => {
 };
 
 export const CustomButtonContainer = styled.button`
-  width: 40rem;
-  height: 50px;
+  width: 20rem;
+  height: 5rem;
   letter-spacing: 2px;
   line-height: 5rem;
   padding: 0 2rem 0 2rem;

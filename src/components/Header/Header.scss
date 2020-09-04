@@ -13,18 +13,17 @@
   .nav-menu-item {
     list-style: none;
     display: inline-block;
-    cursor: pointer;
-    color: #bababa;
+    color: #3a3a3a;
     text-transform: uppercase;
     font-weight: 700;
+    cursor: pointer;
 
     &:not(:last-child) {
       padding-right: 5rem;
     }
 
     &:hover {
-      color: #3a3a3a;
-      border-bottom-width: 1px;
+      color: #bababa;
     }
   }
 

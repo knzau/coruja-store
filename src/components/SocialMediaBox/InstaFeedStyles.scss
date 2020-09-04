@@ -9,32 +9,6 @@
   position: relative;
 }
 
-.text-wrapper {
-  position: absolute;
-  z-index: 3;
-  width: 15rem;
-  background-color: white;
-  height: 15rem;
-  border-radius: 7.5rem;
-  top: 35%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.9;
-}
-.home-store {
-  color: #3a3a3a;
-  background-position: center;
-  z-index: 3;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-}
 #instafeed a {
   display: block;
 }

@@ -1,7 +1,7 @@
 const SectionsData = [
   {
     title: "hats",
-    imageUrl: "https://source.unsplash.com/GMcC5_u0yzM/1200x700",
+    imageUrl: "https://source.unsplash.com/d6pLNFVZt_4/1200x700",
     id: 1,
     linkUrl: "hats",
   },
@@ -14,7 +14,7 @@ const SectionsData = [
   },
   {
     title: "mens",
-    imageUrl: "https://source.unsplash.com/6UEyVsw_1lU/1200x700",
+    imageUrl: "https://source.unsplash.com/SnwHgwQ085I/1200x700",
     size: "large",
     id: 4,
     linkUrl: "",

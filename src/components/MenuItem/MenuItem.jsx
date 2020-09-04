@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./MenuItemStyles.scss";
 
-const MenuItem = ({ title, imageUrl,history, linkUrl, match }) => {
+const MenuItem = ({ title, imageUrl, history, linkUrl, match }) => {
   return (
     <div
       className={`${title} menu-item `}
@@ -17,9 +17,6 @@ const MenuItem = ({ title, imageUrl,history, linkUrl, match }) => {
       />
       <div className="content">
         <h1 className="menu-title">{title.toUpperCase()}</h1>
-        <a href="#shoes" className="btn-text menu-buy-now">
-          Buy Now
-        </a>
       </div>
     </div>
   );
