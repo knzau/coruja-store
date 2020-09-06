@@ -15,7 +15,7 @@ const CallToAction = () => {
         latest drip<br></br>for you
       </h1>
       <a href="#shop" className="shop-btn">
-        <CustomButton>Shop now</CustomButton>
+        <CustomButton inverted>Shop now</CustomButton>
       </a>
       <div className="social-media-icons">
         <a href="#twitter" className="link">

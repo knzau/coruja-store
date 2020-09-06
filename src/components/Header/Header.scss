@@ -53,4 +53,10 @@
     cursor: pointer;
     transform: translateY(-5px);
   }
+
+  .header-link {
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
 }

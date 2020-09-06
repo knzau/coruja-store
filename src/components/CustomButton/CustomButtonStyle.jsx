@@ -12,17 +12,16 @@ const buttonStyles = css`
   }
 `;
 
-const socialMediaBtnStyles = css`
-
-`;
+const socialMediaBtnStyles = css``;
 
 const invertedButtonStyles = css`
     background-color: white;
-    color: black;
-    border: 1px solid black;
+    color: #3a3a3a;
+  outline: none;
+  border: none;
 
     &:hover {
-      background-color: black;
+      background-color: #3a3a3a;
       color: white;
       border: none;
 `;
@@ -41,8 +40,7 @@ const googleSignInStyles = css`
 const getButtonStyles = (props) => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
-  }
-  else if (props.socialMediaBtn) {
+  } else if (props.socialMediaBtn) {
     return socialMediaBtnStyles;
   }
 
