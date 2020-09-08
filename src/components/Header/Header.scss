@@ -10,6 +10,17 @@
   font-weight: 400;
   margin-bottom: 2rem;
 
+  @keyframes seconds {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: -9999px;
+      position: absolute;
+    }
+  }
+
   .nav-menu-item {
     list-style: none;
     display: inline-block;
@@ -44,10 +55,12 @@
   .account-features {
     width: 28rem;
     display: inline-block;
+    position: relative;
   }
 
   .icons {
     width: 6.5rem;
+    height: 2rem;
     padding-left: 4rem;
     float: right;
     cursor: pointer;
@@ -58,5 +71,28 @@
     &:not(:last-child) {
       margin-right: 3rem;
     }
+  }
+}
+
+.signOut {
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #bababa;
+  padding: 3px;
+  position: absolute;
+  text-transform: uppercase;
+  text-decoration: none;
+  right: 10rem;
+  top: 2rem;
+  border-radius: 3px;
+  animation: seconds 1s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 5s;
+
+  &:hover {
+    background-color: #3a3a3a;
+    animation: seconds 1s forwards;
+    animation-iteration-count: 1;
+    animation-delay: 5s;
   }
 }

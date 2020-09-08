@@ -1,15 +1,16 @@
 .feed-container{
   position: relative;
+
 }
-.Feed {
+.Feeds {
   display: grid;
   grid-template-columns: (1fr 1fr 1fr 1fr);
-  grid-template-rows: (1fr 1fr);
+  grid-template-rows: (1fr 1fr );
   grid-column-gap: 0;
   grid-row-gap: 0;
 }
 
-.Feed a:nth-of-type(1n + 9) {
+.Feed a:nth-of-type(1n + 5) {
   display: none;
 }
 

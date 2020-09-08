@@ -7,7 +7,10 @@ import { ReactComponent as PersonIcon } from "../../icons/person_outline-24px.sv
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
-const Header = () => {
+
+function Header ({ currentUser }) {
+
+
   return (
     <div className="header">
       <div className="header__nav-menu">
@@ -38,10 +41,16 @@ const Header = () => {
         </Link>
 
         <FavouriteIcon className="icons heart" />
+        {currentUser ? (
+          <Link to="/myaccount">
+            <PersonIcon className="icons myAccount" />
+          </Link>
+        ) : (
+          <Link to="/signin">
+            <PersonIcon className="icons person" />
+          </Link>
+        )}
 
-        <Link to="/signin">
-          <PersonIcon className="icons person" />
-        </Link>
         <SearchIcon className="icons search" />
       </div>
     </div>

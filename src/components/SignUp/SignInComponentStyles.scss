@@ -1,0 +1,70 @@
+.sign-in-page {
+  width: 100%;
+
+  .page-link {
+    color: #a7a7a7;
+    font-size: 1.4rem;
+    text-align: left;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-weight: 400;
+  }
+  .navigate-link {
+    &:hover {
+      color: #3a3a3a;
+      cursor: pointer;
+    }
+  }
+
+  .sign-in-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sign-in-img-box {
+    width: 46%;
+    height: 51rem;
+    background-image: url("https://source.unsplash.com/TbXRTGdDaHY/600x900");
+    background-size: cover;
+  }
+
+  .sign-in-img {
+    width: 100%;
+  }
+  .sign-in-details {
+    width: 46%;
+  }
+
+  .text-details {
+    font-size: 1.5rem;
+  }
+  .sign-btn {
+    width: 100% !important;
+  }
+
+  .header-tertiary {
+    font-size: 1.4rem;
+    color: #3a3a3a;
+    margin-top: 1.5rem;
+    letter-spacing: 0.6px;
+  }
+  .sign-in-option{
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+font-weight: 500;
+  }
+
+  .account-link{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #3a3a3a;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+}
