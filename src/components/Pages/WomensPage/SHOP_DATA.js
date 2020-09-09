@@ -279,7 +279,7 @@ const SHOP_DATA = [
         price: 200,
       },
       {
-        id: 7,
+        id: 21,
         name: "Floral Skirt",
         imageUrl: "https://source.unsplash.com/H2LI3hBc2xw/600x900",
         price: 120,

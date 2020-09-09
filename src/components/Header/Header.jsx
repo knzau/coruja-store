@@ -10,7 +10,6 @@ import "./Header.scss";
 
 function Header ({ currentUser }) {
 
-
   return (
     <div className="header">
       <div className="header__nav-menu">
@@ -24,7 +23,7 @@ function Header ({ currentUser }) {
           <Link to="/" className="header-link">
             <li className="nav-menu-item">Shipping</li>
           </Link>
-          <Link to="/contacts" className="header-link">
+          <Link to="/contact-us" className="header-link">
             <li className="nav-menu-item">Contacts</li>
           </Link>
         </ul>

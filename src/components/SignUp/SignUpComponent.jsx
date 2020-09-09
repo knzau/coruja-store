@@ -51,7 +51,9 @@ class SignUpComponent extends Component {
 
     this.setState({ [name]: value });
   };
+
   render() {
+    const { displayName, password, email, confirmPassword } = this.state;
     return (
       <div className="sign-up">
         <h1 className="page-link">
@@ -72,7 +74,7 @@ class SignUpComponent extends Component {
                 name="displayName"
                 label="Display Name"
                 onChange={this.handleChange}
-                value={this.state.displayName}
+                value={displayName}
                 required
               />
 
@@ -81,7 +83,7 @@ class SignUpComponent extends Component {
                 name="email"
                 label="Email"
                 onChange={this.handleChange}
-                value={this.state.email}
+                value={email}
                 required
               />
 
@@ -89,14 +91,23 @@ class SignUpComponent extends Component {
                 type="password"
                 name="password"
                 label="Password"
-                value={this.state.password}
+                value={password}
                 onChange={this.handleChange}
                 required
               />
+              <FormInput
+                type="password"
+                name="confirmPassword"
+                label="Confirm Password"
+                value={confirmPassword}
+                onChange={this.handleChange}
+                required
+              />
+              <CustomButton type="submit" className="sign-btn">
+                Sign In
+              </CustomButton>
             </form>
-            <CustomButton type="submit" className="sign-btn">
-              Sign In
-            </CustomButton>
+
             <h2 className="header-tertiary">
               Already have an account?
               <Link to="/signin" className="account-link">

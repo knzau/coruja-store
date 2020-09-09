@@ -24,7 +24,7 @@ const MyAccount = () => {
         <div className="account-details">
           <h2 className="header-wishlist">Account Details</h2>
           <p className="text-my-account">Welcome your name</p>
-          <CustomButton onClick={() => auth.signOut}>Log out</CustomButton>
+          <CustomButton onClick={() => auth.signOut()}>Log out</CustomButton>
         </div>
       </div>
     </div>
