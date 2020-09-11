@@ -50,10 +50,9 @@ function Header({ currentUser, hidden }) {
         )}
 
         <SearchIcon className="icons search" />
-        <CartIcon  />
+        <CartIcon />
       </div>
-      { hidden? null :
-      <CartDropDown />}
+      {hidden ? null : <CartDropDown />}
     </div>
   );
 }
