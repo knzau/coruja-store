@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+
+import { connect } from "react-redux";
+
+import { setCurrentUser } from "./redux/user/userActions";
+
 import "./App.css";
 import HomePage from "./components/Pages/HomePage/HomePage";
 import WomensPage from "./components/Pages/WomensPage/WomensPage.jsx";
@@ -8,40 +13,29 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Copyright from "./components/Copyright/Copyright";
 import SignInPage from "./components/Pages/SignInPage/SignInPage";
-import SignUpPage from "./components/Pages/SignInPage/SignUpPage";
 import MyAccountPage from "./components/Pages/MyAccountPage/MyAccountPage";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import ContactPage from "./components/Pages/ContactPage/ContactPage";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = createUserProfileDocument(userAuth);
 
         (await userRef).onSnapshot((snapShot) => {
-          this.setState(
-            {
-              currentUser: {
-                id: snapShot.id,
-                ...snapShot.data(),
-              },
-            }
-          );
+          setCurrentUser({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
+          });
         });
-      } else {
-        this.setState({ currentUser: userAuth });
       }
+      setCurrentUser(userAuth);
     });
   }
 
@@ -52,14 +46,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/women" component={WomensPage} />
           <Route path="/men" component={MensPage} />
-          <Route path="/signin" component={SignInPage} />
-          <Route path="/register" component={SignUpPage} />
-          <Route path="/myaccount" component={MyAccountPage} />
+          <Route
+            exact
+            path="/signin"
+            render={() =>
+              this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
+            }
+          />
+          <Route
+            exact
+            path="/myaccount"
+            render={() =>
+              this.props.currentUser === null ? (
+                <Redirect to="/" />
+              ) : (
+                <MyAccountPage />
+              )
+            }
+          />
           <Route path="/contact-us" component={ContactPage} />
         </Switch>
         <Footer />
@@ -68,4 +77,12 @@ class App extends Component {
     );
   }
 }
-export default App;
+
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);

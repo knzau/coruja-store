@@ -1,13 +1,34 @@
 import React from "react";
 import SignInComponent from "../../SignUp/SignInComponent";
+import SignUpComponent from "../../SignUp/SignUpComponent";
+import { Component } from "react";
 
+class SignInPage extends Component {
+  constructor() {
+    super();
 
-const SignInPage = () => {
-  return (
-    <div>
-      <SignInComponent />
-    </div>
-  );
-};
+    this.state = {
+      hide: true,
+    };
+  }
 
+  handleCreateAccount = () => {
+    this.setState({ hide: false });
+  };
+  handleSignIn = () => {
+    this.setState({ hide: true });
+  };
+
+  render() {
+    return (
+      <div>
+        {this.state.hide ? (
+          <SignInComponent handleCreateAccount={this.handleCreateAccount} />
+        ) : (
+          <SignUpComponent handleSignIn={this.handleSignIn} />
+        )}
+      </div>
+    );
+  }
+}
 export default SignInPage;

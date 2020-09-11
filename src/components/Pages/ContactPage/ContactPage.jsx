@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormInput from "../../FormInput/FormInput";
 import { auth } from "../../../firebase/firebase.utils";
+import CustomButton from "../../CustomButton/CustomButton";
 import "./ContactPageStyles.scss";
 
 class ContactPage extends Component {
@@ -49,39 +50,29 @@ class ContactPage extends Component {
           We’re available by phone & chat Monday–Friday, 10 a.m. – 5:30 p.m.
           EST. Call us at +444-0101-000-333
         </p>
-        <h2 className="header-small">By contact form</h2>
+        <h2 className="header-small contact-form-header">By contact form</h2>
         <div className="contact-form-wrapper">
           <form>
-            <FormInput
-              className="contact-input"
-              type="text"
-              name="displayName"
-              label="Display Name"
-              onChange={this.handleChange}
-              value={this.state.displayName}
-              required
-            />
+            <div className="contact-details">
+              <FormInput
+                type="text"
+                name="displayName"
+                label="Display Name"
+                onChange={this.handleChange}
+                value={this.state.displayName}
+                required
+              />
+              <FormInput
+                type="email"
+                name="email"
+                label="Email"
+                onChange={this.handleChange}
+                value={this.state.email}
+                placeholder={this.state.email}
+                required
+              />
+            </div>
 
-            <FormInput
-              className="contact-input"
-              type="email"
-              name="email"
-              label="Email"
-              onChange={this.handleChange}
-              value={this.state.email}
-              placeholder={this.state.email}
-              required
-            />
-
-            <FormInput
-              type="password"
-              name="password"
-              label="Password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              placeholder={this.state.password}
-              required
-            />
             <FormInput
               type="text"
               name="phoneNumber"
@@ -96,7 +87,9 @@ class ContactPage extends Component {
               id="ContactFormMessage"
               rows="10"
             ></textarea>
-            <input type="submit" className="btn btn-large" value="Send" />
+            <CustomButton type="submit" className="btn btn-large">
+              Send
+            </CustomButton>
           </form>
         </div>
       </div>

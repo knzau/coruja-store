@@ -22,7 +22,6 @@ $main-color: black;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
-    margin: 2.5rem 0;
 
     &:focus {
       outline: none;
@@ -51,4 +50,5 @@ $main-color: black;
       @include shrinkLabel();
     }
   }
+
 }

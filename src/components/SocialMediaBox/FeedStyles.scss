@@ -1,22 +1,26 @@
-.feed-container{
+.feed-container {
   position: relative;
-
+  overflow: hidden;
+  height: 50rem;
 }
 .Feeds {
   display: grid;
-  grid-template-columns: (1fr 1fr 1fr 1fr);
-  grid-template-rows: (1fr 1fr );
-  grid-column-gap: 0;
-  grid-row-gap: 0;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #fff;
+  color: #444;
 }
 
-.Feed a:nth-of-type(1n + 5) {
+.Feeds a:nth-of-type(1n + 8) {
   display: none;
 }
-
-.Feed a img {
+.Feeds a:nth-of-type(1n + 5) {
+  margin-top: -100%;
+}
+.Feeds a img {
   width: 100%;
-  float: left;
+  border-radius: 5px;
+  padding: 1px;
 }
 
 .text-wrapper-social {
@@ -28,8 +32,7 @@
   border-radius: 7.5rem;
   opacity: 0.9;
   left: 44%;
-  top: 38%;
-
+  top: 35%;
 }
 .coruja-store {
   color: #3a3a3a;
@@ -43,5 +46,5 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -55%);
 }

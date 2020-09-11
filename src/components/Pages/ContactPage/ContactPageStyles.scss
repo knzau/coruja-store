@@ -1,44 +1,57 @@
-.contact-page{
-margin: 10rem auto;
-width: 70%;
-  .header-medium{
-      font-size: 5rem;
+.contact-page {
+  margin: 5rem auto;
+  width: 70%;
+  .header-medium {
+    font-size: 5rem;
   }
-  .header-small{
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-      font-weight: 900;
-      color: #3a3a3a;
-      margin-bottom: 1rem;
+  .header-small {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 900;
+    color: #3a3a3a;
+    margin-bottom: 1rem;
   }
-  .center{text-align: center;}
-  .left{text-align: left;}
-
-  .text-details-center{
-      font-size: 1.6rem;
-line-height: 1.3;
-      text-align: center;
-      margin-bottom: 3rem;
-     
+  .center {
+    text-align: center;
+  }
+  .left {
+    text-align: left;
   }
 
-  .text-details{
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-
+  .text-details-center {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 3rem;
   }
 
-  .contact-form-wrapper{
-      margin: 0 auto;
+  .text-details {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
   }
-.contact-input{
-    width: 45%;
-    padding: 1rem;
-    outline: none;
-    display: inline-block;
+
+  .contact-form-wrapper {
+    margin: 0 auto;
+  }
+  .contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-template-rows: 2fr;
+    margin-bottom: -6rem;
+  }
+
+  .contact-form-header {
+    margin-bottom: -1rem;
+  }
+
+  #ContactFormMessage {
+    width: 100%;
+    height: 25rem;
+    margin-bottom: 2rem;
+  }
+  .btn-large {
+    width: 100%;
+  }
 }
-
-}
- 
-

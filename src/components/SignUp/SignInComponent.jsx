@@ -37,7 +37,10 @@ class SignInComponent extends Component {
     return (
       <div className="sign-in-page">
         <h1 className="page-link">
-          <span className="navigate-link">Home </span>/ Register
+          <Link to="/" className="LinkStyling">
+            <span className="navigate-link">Home </span>
+          </Link>
+          / Sign in
         </h1>
         <div className="sign-in-wrapper">
           <div className="sign-in-img-box" />
@@ -69,22 +72,20 @@ class SignInComponent extends Component {
               <CustomButton type="submit" className="sign-btn">
                 Sign In
               </CustomButton>
+              <p className="sign-in-option"> or </p>
+              <CustomButton
+                onClick={signInWithGoogle}
+                type="button"
+                className="sign-btn"
+                isGoogleSignIn
+              >
+                Sign in with Google
+              </CustomButton>
             </form>
 
-            <p className="sign-in-option"> or </p>
-            <CustomButton
-              onClick={signInWithGoogle}
-              type="button"
-              className="sign-btn"
-              isGoogleSignIn
-            >
-              Sign in with Google
-            </CustomButton>
             <h2 className="header-tertiary">
               Don't have an account?{" "}
-              <Link to="/register" className="account-link">
-                Create account
-              </Link>
+              <span className="account-link" onClick={this.props.handleCreateAccount}>Create account</span>
             </h2>
           </div>
         </div>

@@ -53,18 +53,18 @@
   }
 
   .account-features {
-    width: 28rem;
-    display: inline-block;
+    width: 24rem;
+    display: flex;
+    justify-content: space-between;
     position: relative;
   }
 
   .icons {
-    width: 6.5rem;
-    height: 2rem;
-    padding-left: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
     float: right;
     cursor: pointer;
-    transform: translateY(-5px);
+
   }
 
   .header-link {
@@ -74,6 +74,9 @@
   }
 }
 
+.cartdropdown-header{
+  position: absolute;
+}
 .signOut {
   font-size: 1.3rem;
   color: #fff;

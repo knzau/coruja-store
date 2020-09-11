@@ -17,6 +17,7 @@ class SignUpComponent extends Component {
     };
   }
 
+
   handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -57,7 +58,10 @@ class SignUpComponent extends Component {
     return (
       <div className="sign-up">
         <h1 className="page-link">
-          <span className="navigate-link">Home </span>/ Account
+          <Link to="/" className="LinkStyling">
+            <span className="navigate-link">Home </span>
+          </Link>
+          / Register
         </h1>
         <div className="sign-in-wrapper">
           <div className="sign-in-img-box" />
@@ -110,9 +114,10 @@ class SignUpComponent extends Component {
 
             <h2 className="header-tertiary">
               Already have an account?
-              <Link to="/signin" className="account-link">
-                &nbsp; Sign In
-              </Link>
+              <span onClick={this.props.handleSignIn} className="account-link">
+                {" "}
+                Sign In{" "}
+              </span>
             </h2>
           </div>
         </div>

@@ -1,15 +1,18 @@
 import React from "react";
 import logo from "../../coruja-logo.png";
-import { ReactComponent as ShoppingBagIcon } from "../../icons/shopping_bag-24px.svg";
+import CartIcon from "../CartICon/CartIcon";
+import CartDropDown from "../CartDropDown/CartDropDown";
+import { selectCartHidden } from "../../redux/cart/cartSelector";
 import { ReactComponent as SearchIcon } from "../../icons/search-24px.svg";
 import { ReactComponent as FavouriteIcon } from "../../icons/favorite_border-24px.svg";
 import { ReactComponent as PersonIcon } from "../../icons/person_outline-24px.svg";
+import { selectCurrentUser } from "../../redux/user/userSelector.js";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
-
-function Header ({ currentUser }) {
-
+function Header({ currentUser, hidden }) {
   return (
     <div className="header">
       <div className="header__nav-menu">
@@ -35,10 +38,6 @@ function Header ({ currentUser }) {
       </div>
       <p className="contact">+444-0101-000</p>
       <div className="account-features">
-        <Link to="/shoppingcart">
-          <ShoppingBagIcon className="icons shoppingBag" />
-        </Link>
-
         <FavouriteIcon className="icons heart" />
         {currentUser ? (
           <Link to="/myaccount">
@@ -51,9 +50,17 @@ function Header ({ currentUser }) {
         )}
 
         <SearchIcon className="icons search" />
+        <CartIcon  />
       </div>
+      { hidden? null :
+      <CartDropDown />}
     </div>
   );
-};
+}
 
-export default Header;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
+});
+
+export default connect(mapStateToProps)(Header);
