@@ -14,14 +14,15 @@
 
 .item-count {
   position: absolute;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
   font-weight: 900;
   color: white;
-  bottom: -2px;
+  bottom: -3px;
   left: 12px;
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 6px;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 8px;
   background-color: rgb(163, 1, 1);
   text-align: center;
 }

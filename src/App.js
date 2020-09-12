@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-
 import { connect } from "react-redux";
 
 import { setCurrentUser } from "./redux/user/userActions";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
-import "./App.css";
-import HomePage from "./components/Pages/HomePage/HomePage";
-import WomensPage from "./components/Pages/WomensPage/WomensPage.jsx";
-import MensPage from "./components/Pages/MensPage/MensPage.jsx";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Copyright from "./components/Copyright/Copyright";
+
+import HomePage from "./components/Pages/HomePage/HomePage";
+import WomensPage from "./components/Pages/WomensPage/WomensPage.jsx";
+import MensPage from "./components/Pages/MensPage/MensPage.jsx";
 import SignInPage from "./components/Pages/SignInPage/SignInPage";
 import MyAccountPage from "./components/Pages/MyAccountPage/MyAccountPage";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import ContactPage from "./components/Pages/ContactPage/ContactPage";
+import CheckoutPage from "./components/Pages/CheckoutPage/CheckoutPage";
+
+import "./App.css";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -69,6 +71,7 @@ class App extends Component {
               )
             }
           />
+          <Route exact path="/checkout" component={CheckoutPage} />
           <Route path="/contact-us" component={ContactPage} />
         </Switch>
         <Footer />
