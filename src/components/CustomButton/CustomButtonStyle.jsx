@@ -52,7 +52,7 @@ export const CustomButtonContainer = styled.button`
   height: 5rem;
   letter-spacing: 2px;
   line-height: 5rem;
-  padding: 0 2rem 0 2rem;
+  padding: 0 1.5rem 0 1.5rem;
   font-size: 1.6rem;
   text-transform: uppercase;
   font-family: "Lato";

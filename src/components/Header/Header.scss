@@ -21,6 +21,10 @@
     }
   }
 
+  &__nav-menu{
+    width: 35%;
+  }
+
   .nav-menu-item {
     list-style: none;
     display: inline-block;
@@ -28,11 +32,7 @@
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
-
-    &:not(:last-child) {
-      padding-right: 5rem;
-    }
-
+    margin-right: 4rem;
     &:hover {
       color: #bababa;
     }
@@ -44,7 +44,7 @@
   }
   .logo-box {
     width: 10%;
-    transform: translateY(-1.5rem);
+    transform: translateY(-1rem);
   }
 
   .logo {
@@ -53,25 +53,22 @@
   }
 
   .account-features {
-    width: 24rem;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: relative;
   }
 
   .icons {
     width: 2.5rem;
     height: 2.5rem;
-    float: right;
+  
     cursor: pointer;
+    margin-right: 4rem;
 
   }
 
-  .header-link {
-    &:not(:last-child) {
-      margin-right: 3rem;
-    }
-  }
+  
 }
 
 .cartdropdown-header{

@@ -16,8 +16,10 @@ import SignInPage from "./components/Pages/SignInPage/SignInPage";
 import MyAccountPage from "./components/Pages/MyAccountPage/MyAccountPage";
 import ContactPage from "./components/Pages/ContactPage/ContactPage";
 import CheckoutPage from "./components/Pages/CheckoutPage/CheckoutPage";
+import WishlistPage from "./components/Pages/WishlistPage/WishlistPage";
 
 import "./App.css";
+
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -71,6 +73,7 @@ class App extends Component {
               )
             }
           />
+          <Route path="/iwish" component={WishlistPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
           <Route path="/contact-us" component={ContactPage} />
         </Switch>

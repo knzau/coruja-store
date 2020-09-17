@@ -1,0 +1,35 @@
+.collection-page {
+  width: 100%;
+}
+
+.header-wishlist {
+  letter-spacing: 1.6px;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.text-details-wishlist {
+  color: #3a3a3a;
+  font-size: 1.8rem;
+  z-index: 200;
+
+}
+.header-wishlist-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25rem;
+  background-image: url("https://source.unsplash.com/R2aodqJn3b8/900x200");
+  background-size: cover;
+  margin-bottom: 5rem;
+}
+.collection-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  column-gap: 1.5rem;
+  row-gap: 5rem;
+  justify-items: center;
+}

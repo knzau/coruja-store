@@ -1,5 +1,15 @@
-.collection-item {
+.collection-item-wrapper{
   width: 19vw;
+  position: relative;
+  button{
+    position: absolute;
+    bottom: -7rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+.collection-item {
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 45rem;
@@ -15,6 +25,23 @@
     opacity: 1;
     z-index: 200;
   }
+  .heart-icon-wrapper{
+    opacity: 1;
+    z-index: 300;
+  }
+  }
+
+  .heart-icon-wrapper{
+    width: 3.5rem;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    opacity: 0;
+    
+  }
+  .wishlist-btn{
+    width: 100%;
+    
   }
   
   .collection-image {
@@ -57,7 +84,8 @@
       width: 3.5rem;
       height: 3.5rem;
       position: absolute;
-      right: 1.5rem;
+      right: 2rem;
+      bottom: 2rem;
 
       &:active{
         animation: bounce;

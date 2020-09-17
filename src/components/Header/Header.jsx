@@ -4,8 +4,8 @@ import CartIcon from "../CartICon/CartIcon";
 import CartDropDown from "../CartDropDown/CartDropDown";
 import { selectCartHidden } from "../../redux/cart/cartSelector";
 import { ReactComponent as SearchIcon } from "../../icons/search-24px.svg";
-import { ReactComponent as FavouriteIcon } from "../../icons/favorite_border-24px.svg";
 import { ReactComponent as PersonIcon } from "../../icons/person_outline-24px.svg";
+import WishlistIcon from "../WishlistIcon/WishlistIcon";
 import { selectCurrentUser } from "../../redux/user/userSelector.js";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -36,9 +36,17 @@ function Header({ currentUser, hidden }) {
           <img src={logo} alt="coruja-logo" className="logo" />
         </Link>
       </div>
-      <p className="contact">+444-0101-000</p>
+
       <div className="account-features">
-        <FavouriteIcon className="icons heart" />
+        {currentUser ? (
+          <Link to="/myaccount">
+            <WishlistIcon />
+          </Link>
+        ) : (
+          <Link to="/signin">
+            <WishlistIcon />
+          </Link>
+        )}
         {currentUser ? (
           <Link to="/myaccount">
             <PersonIcon className="icons myAccount" />

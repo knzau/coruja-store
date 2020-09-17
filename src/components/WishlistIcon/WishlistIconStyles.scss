@@ -1,0 +1,31 @@
+.wishlist-count-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 2.6rem;
+  margin-right: 4rem;
+
+  .wishlist-count {
+    position: absolute;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+    font-weight: 900;
+    color: white;
+    bottom: -3px;
+    left: 12px;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 8px;
+    background-color: rgb(163, 1, 1);
+    text-align: center;
+  }
+
+  .heart-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    cursor: pointer;
+  }
+}

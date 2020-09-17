@@ -27,7 +27,6 @@
       color: gray;
       width: 23%;
 
-
       &:last-child {
         width: 8%;
       }
@@ -49,5 +48,28 @@
     margin-top: 40px;
     font-size: 24px;
     color: red;
+  }
+  .shopping-cart-wrapper {
+    width: 100%;
+  }
+  .empty-cart-wrapper {
+    text-align: center;
+    button {
+      margin: 2.5rem auto;
+      width: 100%;
+    }
+
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  .empty-message {
+    font-size: 5rem;
+    color: #3a3a3a;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
   }
 }

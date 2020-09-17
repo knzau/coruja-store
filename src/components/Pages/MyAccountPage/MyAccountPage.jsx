@@ -1,10 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUserName } from "../../../redux/user/userSelector.js";
+import { selectwishlistItemsCount } from "../../../redux/wishlist/wishlistSelector";
 import CustomButton from "../../CustomButton/CustomButton";
 import { Link } from "react-router-dom";
 import "./MyAccountPageStyles.scss";
 import { auth } from "../../../firebase/firebase.utils";
 
-const MyAccount = () => {
+const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
   return (
     <div className="my-account">
       <h1 className="page-link">
@@ -14,16 +18,24 @@ const MyAccount = () => {
       <div className="account-details-wrapper">
         <div className="wishlist">
           <h2 className="header-wishlist">Wishlist</h2>
-          <p className="text-my-account">
-            You currently have a couple in your wishlist.
-          </p>
+          {wishlistItemsCount ? (
+            <p className="text-my-account">
+              You currently have {wishlistItemsCount} items in your wishlist.
+            </p>
+          ) : (
+            <p className="text-my-account">
+              You currently have no items in your wishlist.
+            </p>
+          )}
           <Link to="/iwish" className="LinkStyling">
             <CustomButton>View wishlist</CustomButton>
           </Link>
         </div>
         <div className="account-details">
           <h2 className="header-wishlist">Account Details</h2>
-          <p className="text-my-account">Welcome your name</p>
+          <p className="text-my-account">
+            Welcome {currentUserName.toUpperCase()}
+          </p>
           <CustomButton onClick={() => auth.signOut()}>Log out</CustomButton>
         </div>
       </div>
@@ -31,4 +43,9 @@ const MyAccount = () => {
   );
 };
 
-export default MyAccount;
+const mapStateToProps = createStructuredSelector({
+  wishlistItemsCount: selectwishlistItemsCount,
+  currentUserName: selectCurrentUserName,
+});
+
+export default connect(mapStateToProps)(MyAccount);

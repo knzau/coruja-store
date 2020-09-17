@@ -17,7 +17,7 @@
     height: 24rem;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll !important;
+    overflow-y: auto !important;
   }
 
   button {
