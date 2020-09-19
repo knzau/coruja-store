@@ -1,12 +1,17 @@
 import React from "react";
+
+
 import CollectionItem from "../../CollectionItem/CollectionItem";
+import ProductDetail from "../../ProductDetail/ProductDetail";
+
 
 import "./CollectionPage.scss";
 
-const CollectionPage = ({ title, items }) => {
- 
+const CollectionPage = ({ items, title}) => {
+
   return (
     <div className="collection-page">
+      <ProductDetail />
       <h1 className="collection-title">{title} collection</h1>
       <div className="collection-items">
         {items.map((item) => (
@@ -16,5 +21,7 @@ const CollectionPage = ({ title, items }) => {
     </div>
   );
 };
+
+
 
 export default CollectionPage;

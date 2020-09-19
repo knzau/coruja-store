@@ -11,6 +11,21 @@
   position: relative;
   padding-bottom: 20rem;
   @include clearfix;
+  background-image: url("https://source.unsplash.com/du8AbwM5z2g/1600x1000");
+  background-size: cover;
+
+  button {
+    position: absolute;
+    top: 30rem;
+    margin-left: 2rem;
+  }
+
+  .men-btn {
+    left: 4rem;
+  }
+  .women-btn {
+    left: 28rem;
+  }
 }
 
 .cta-primary-header {
@@ -20,18 +35,11 @@
   letter-spacing: 5px;
   line-height: 1;
   position: absolute;
-  color: white;
+  color: #3a3a3a;
   top: 15rem;
   left: 10rem;
 }
 
-.shop-btn {
-  display: block;
-  position: absolute;
-  top: 28rem;
-  text-decoration: none;
-  left: 10rem;
-}
 
 .social-media-icons {
   float: right;
@@ -44,6 +52,11 @@
   display: block;
   margin-bottom: 3rem;
   cursor: pointer;
+
+  &:hover {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+  }
 }
 
 .cta-bg-img {
@@ -59,3 +72,124 @@
   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
 }
+
+/**
+ * ----------------------------------------
+ * animation rotate-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+ /*btn_background*/
+  .effect01 {
+    color: #fff;
+    border: 1px solid #3a3a3a;
+    background-color: #3a3a3a;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  .effect01:hover {
+    border: 1px solid #3a3a3a;
+    background-color: #fff;
+  }
+
+  /*btn_text*/
+  .effect01 span {
+    transition: all 0.2s ease-out;
+    z-index: 2;
+  }
+  .effect01:hover span {
+    letter-spacing: 0.13em;
+    color: #3a3a3a;
+  }
+
+  /*highlight*/
+  .effect01:after {
+    background: #fff;
+    border: 0px solid #000;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.8;
+    position: absolute;
+    top: -50px;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    width: 50px;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
+    z-index: 1;
+  }
+  .effect01:hover:after {
+    background: #fff;
+    border: 1 px solid #000;
+    opacity: 0;
+    left: 120%;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+
+  /*btn_background*/
+  .effect01 {
+    color: #fff;
+    border: 1px solid #3a3a3a;
+    background-color: #3a3a3a;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  .effect01:hover {
+    border: 1px solid #3a3a3a;
+    background-color: #fff;
+  }
+
+  /*btn_text*/
+  .effect01 span {
+    transition: all 0.2s ease-out;
+    z-index: 2;
+  }
+  .effect01:hover span {
+    letter-spacing: 0.13em;
+    color: #3a3a3a;
+  }
+
+  /*highlight*/
+  .effect01:after {
+    background: #fff;
+    border: 1px solid #3a3a3a;
+    content: "";
+    opacity: 0.8;
+    position: absolute;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    width: 50px;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
+    z-index: 1;
+  }
+  .effect01:hover:after {
+    background: #fff;
+    border: 20px solid #3a3a3a;
+    opacity: 0;
+    left: 120%;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }

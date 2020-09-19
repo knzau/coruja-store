@@ -51,29 +51,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
     position: absolute;
 
-    .menu-title {
-      font-weight: bold;
-      margin-bottom: 6px;
-      font-size: 3rem;
-      color: white;
-      padding-bottom: 1rem;
-      margin-bottom: 3rem;
-      letter-spacing: 2px;
-      border-bottom: 1px solid white;
-    }
+    ion-icon  {
+      font-weight: 900;
+      content: "";
+      position: absolute;
+      transition: 0.2s all;
+      opacity: 1;
+      color: #fff;
 
-    .subtitle {
-      font-weight: lighter;
-      font-size: 1.6rem;
-    }
-    .menu-buy-now {
-      text-align: center;
-      color: white;
-      background: rgba(#3a3a3a, 0.9);
-      width: 8rem;
-      padding: 0.8rem 0;
+      &:hover {
+        position: absolute;
+        opacity: 1;
+      }
     }
   }
 }

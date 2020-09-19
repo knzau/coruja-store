@@ -7,18 +7,22 @@
   height: 2.6rem;
   margin-right: 4rem;
 
-  .wishlist-count {
+  .wishlist-count-wrapper {
     position: absolute;
+    left: 1.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    bottom: -3px;
+    border-radius: 9px;
+    background-color: rgb(163, 1, 1);
+  }
+  .wishlist-count {
+    margin-bottom: 5px;
+    margin-left: 6px;
     font-size: 1rem;
     letter-spacing: 0.2px;
     font-weight: 900;
     color: white;
-    bottom: -3px;
-    left: 12px;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 8px;
-    background-color: rgb(163, 1, 1);
     text-align: center;
   }
 

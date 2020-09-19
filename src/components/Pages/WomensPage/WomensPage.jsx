@@ -1,40 +1,42 @@
-import React, { Component } from "react";
+import React from "react";
 import CollectionPage from "../CollectionPage/CollectionPage";
+import { createStructuredSelector } from "reselect";
+import { selectCollectionsForPreview } from "../../../redux/shop/shopSelector.js";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
- 
-import SHOP_DATA from "./SHOP_DATA.js";
+import "./WomensPageStyles.scss";
 
-class WomensPage extends Component {
-  constructor(props) {
-    super(props);
+const WomensPage = ({ collections }) => {
+  const CollectionItems = Object.values(collections);
+  const womenCollectionItems = CollectionItems.filter(
+    (CollectionItem) => CollectionItem.title === "Women's"
+  );
 
-    this.state = {
-      collections: SHOP_DATA,
-    };
-  }
+  return (
+    <div className="women-page">
+      <h1 className="page-link">
+        <Link to="/" className="LinkStyling">
+          <span className="navigate-link">Home </span>
+        </Link>
+        / Women
+      </h1>
 
-  render() {
-    const { collections } = this.state;
-    const WomenCollectionItems = collections.filter(
-      (collection) => collection.title === "Women's"
-    );
-    console.log(WomenCollectionItems);
-    console.log(collections);
+      {womenCollectionItems.map(
+        ({ id, items, title, ...otherCollectionProps }) => (
+          <CollectionPage
+            key={id}
+            items={items}
+            title={title}
+            {...otherCollectionProps}
+          />
+        )
+      )}
+    </div>
+  );
+};
 
-    return (
-      <div className="women-page">
-        <h1 className="page-link">
-          <Link to="/" className="LinkStyling">
-            <span className="navigate-link">Home </span>
-          </Link>
-          / Women
-        </h1>
-        {WomenCollectionItems.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPage key={id} {...otherCollectionProps} />
-        ))}
-      </div>
-    );
-  }
-}
+const mapStateToProps = createStructuredSelector({
+  collections: selectCollectionsForPreview,
+});
 
-export default WomensPage;
+export default connect(mapStateToProps)(WomensPage);

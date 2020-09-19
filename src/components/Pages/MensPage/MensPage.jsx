@@ -1,43 +1,42 @@
-import React, { Component } from "react";
+import React from "react";
 import CollectionPage from "../CollectionPage/CollectionPage";
+import { createStructuredSelector } from "reselect";
+import { selectCollectionsForPreview } from "../../../redux/shop/shopSelector.js";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./MensPageStyle.scss";
 
-import SHOP_DATA from "../WomensPage/SHOP_DATA";
+const MensPage = ({ collections }) => {
+  const CollectionItems = Object.values(collections);
+  const MenCollectionItems = CollectionItems.filter(
+    (CollectionItem) => CollectionItem.title === "Men's"
+  );
 
-class MensPage extends Component {
-  constructor(props) {
-    super(props);
+  return (
+    <div className="men-page">
+      <h1 className="page-link">
+        <Link to="/" className="LinkStyling">
+          <span className="navigate-link">Home </span>
+        </Link>
+        / Men
+      </h1>
 
-    this.state = {
-      collections: SHOP_DATA,
-    };
-  }
+      {MenCollectionItems.map(
+        ({ id, items, title, ...otherCollectionProps }) => (
+          <CollectionPage
+            key={id}
+            items={items}
+            title={title}
+            {...otherCollectionProps}
+          />
+        )
+      )}
+    </div>
+  );
+};
 
-  render() {
-    const { collections } = this.state;
+const mapStateToProps = createStructuredSelector({
+  collections: selectCollectionsForPreview,
+});
 
-    const MenCollectionItems = collections.filter(
-      (collection) => collection.title === "Men's"
-    );
-    console.log(MenCollectionItems);
-    console.log(collections);
-
-    return (
-      <div className="men-page">
-        <h1 className="page-link">
-          <Link to="/" className="LinkStyling">
-            <span className="navigate-link">Home </span>
-          </Link>
-          / Men
-        </h1>
-
-        {MenCollectionItems.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPage key={id} {...otherCollectionProps} />
-        ))}
-      </div>
-    );
-  }
-}
-
-export default MensPage;
+export default connect(mapStateToProps)(MensPage);

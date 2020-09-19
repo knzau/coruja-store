@@ -1,7 +1,7 @@
-.collection-item-wrapper{
+.collection-item-wrapper {
   width: 19vw;
   position: relative;
-  button{
+  button {
     position: absolute;
     bottom: -7rem;
     margin: 0 auto;
@@ -19,31 +19,34 @@
   &:hover {
     box-shadow: 0.8rem 1.2rem 3rem rgba(#ccc, 0.4);
     cursor: pointer;
-    filter: brightness(90%);
 
     #addCart {
-    opacity: 1;
-    z-index: 200;
-  }
-  .heart-icon-wrapper{
-    opacity: 1;
-    z-index: 300;
-  }
+      opacity: 1;
+      z-index: 200;
+    }
+    .heart-icon-wrapper {
+      opacity: 1;
+      z-index: 300;
+    }
   }
 
-  .heart-icon-wrapper{
+  .heart-icon-wrapper {
     width: 3.5rem;
     position: absolute;
     right: 2rem;
     top: 2rem;
     opacity: 0;
-    
   }
-  .wishlist-btn{
+  .wishlist-btn {
     width: 100%;
-    
+
+    &:active {
+      -webkit-animation: scale-up-center 0.4s
+        cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
   }
-  
+
   .collection-image {
     width: 100%;
     height: 95%;
@@ -73,21 +76,45 @@
       font-weight: 700;
       color: #807d7d;
     }
-
-    
   }
 }
 
 #addCart {
   display: block;
-      opacity: 0;
-      width: 3.5rem;
-      height: 3.5rem;
-      position: absolute;
-      right: 2rem;
-      bottom: 2rem;
+  opacity: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
 
-      &:active{
-        animation: bounce;
-      }
-    }
+  &:active {
+    animation: bounce;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

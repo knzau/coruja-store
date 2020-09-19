@@ -12,7 +12,7 @@ const CheckoutPage = ({ cartItems, total, history }) => {
     <div className="checkout-page">
       {cartItems.length ? (
         <div className="shopping-cart-wrapper">
-          <h1 className="header-medium">Your cart</h1>
+          <h1 className="header-medium center">Your cart</h1>
           <div className="checkout-header">
             <div className="header-block">
               <span>Product</span>

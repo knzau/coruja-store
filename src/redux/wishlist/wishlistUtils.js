@@ -9,10 +9,6 @@ export const addItemToWishlist = (wishlistItems, wishlistItemToAdd) => {
   return [...wishlistItems, { ...wishlistItemToAdd }];
 };
 
-export const removeItemFromWishlist = (wishlistItems, wishlistItemToRemove) => {
-  const filteredlistitems = wishlistItems.filter(
-    (wishlistItem) => wishlistItem.id !== wishlistItemToRemove.id
-  );
-
-  return [...filteredlistitems]
+export const removeWishlistItem = (wishlistItems, wishlistItemToRemove) => {
+   return wishlistItems.filter((wishlistItem) => wishlistItem.id !== wishlistItemToRemove.id);
 };

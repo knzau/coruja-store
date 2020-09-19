@@ -7,12 +7,16 @@ import { ReactComponent as FavouriteIcon } from "../../icons/favorite_border-24p
 import "./WishlistIconStyles.scss";
 
 const WishlistIcon = ({ wishlistItemsCount }) => {
-    return (
-      <div className="wishlist-count-circle">
-            <span className="wishlist-count">{wishlistItemsCount}</span>
-             <FavouriteIcon className="heart-icon" />
-      </div>
-    );
+  return (
+    <div className="wishlist-count-circle">
+      {wishlistItemsCount ? (
+        <div className="wishlist-count-wrapper">
+          <span className="wishlist-count">{wishlistItemsCount}</span>
+        </div>
+      ) : null}
+      <FavouriteIcon className="heart-icon" />
+    </div>
+  );
 };
 
 const mapStateToProps = createStructuredSelector({

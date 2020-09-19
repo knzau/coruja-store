@@ -1,5 +1,7 @@
 const ShopActionTypes = {
   UPDATE_COLLECTIONS: "UPDATE_COLLECTIONS",
+  SEARCH_COLLECTIONS: "SEARCH_COLLECTIONS",
+  SEARCH_HIDDEN: "SEARCH_HIDDEN",
 };
 
 export default ShopActionTypes;

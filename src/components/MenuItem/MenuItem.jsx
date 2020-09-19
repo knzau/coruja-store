@@ -1,5 +1,7 @@
 import React from "react";
+
 import { withRouter } from "react-router-dom";
+import AnimatedCustomButton from "../AnimatedCustomButton/AnimatedCustomButton";
 import "./MenuItemStyles.scss";
 
 const MenuItem = ({ title, imageUrl, history, linkUrl, match }) => {
@@ -16,7 +18,12 @@ const MenuItem = ({ title, imageUrl, history, linkUrl, match }) => {
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
       <div className="content">
-        <h1 className="menu-title">{title.toUpperCase()}</h1>
+        <AnimatedCustomButton>
+          <span>
+            {title.toUpperCase()}{" "}
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </span>
+        </AnimatedCustomButton>
       </div>
     </div>
   );

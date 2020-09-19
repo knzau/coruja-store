@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
+import { selectCurrentUser } from "./redux/user/userSelector";
 import { setCurrentUser } from "./redux/user/userActions";
+import { selectCollectionsForPreview } from "./redux/shop/shopSelector";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
-import Header from "./components/Header/Header";
+import HeaderSearchBox from "./components/HeaderSearchBox/HeaderSearchBox.jsx";
 import Footer from "./components/Footer/Footer";
 import Copyright from "./components/Copyright/Copyright";
 
 import HomePage from "./components/Pages/HomePage/HomePage";
+
 import WomensPage from "./components/Pages/WomensPage/WomensPage.jsx";
 import MensPage from "./components/Pages/MensPage/MensPage.jsx";
 import SignInPage from "./components/Pages/SignInPage/SignInPage";
@@ -17,9 +21,10 @@ import MyAccountPage from "./components/Pages/MyAccountPage/MyAccountPage";
 import ContactPage from "./components/Pages/ContactPage/ContactPage";
 import CheckoutPage from "./components/Pages/CheckoutPage/CheckoutPage";
 import WishlistPage from "./components/Pages/WishlistPage/WishlistPage";
+import HatsPage from "./components/Pages/HatsPage/HatsPage.jsx";
+import ShoesPage from "./components/Pages/ShoesPage/ShoesPage.jsx";
 
 import "./App.css";
-
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -50,11 +55,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <HeaderSearchBox />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/women" component={WomensPage} />
           <Route path="/men" component={MensPage} />
+          <Route path="/women" component={WomensPage} />
+          <Route path="/hats" component={HatsPage} />
+          <Route path="/sneakers" component={ShoesPage} />
           <Route
             exact
             path="/signin"
@@ -84,8 +91,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => ({

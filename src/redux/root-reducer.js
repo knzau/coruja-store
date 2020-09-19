@@ -7,10 +7,12 @@ import directoryReducer from "./directory/directoryReducer";
 import shopReducer from "./shop/shopReducer";
 import cartReducer from "./cart/cartReducer";
 import wishlistReducer from "./wishlist/wishlistReducer";
+import collectionItemReducer from "./collectionItemDetail/collectionItemReducer";
+
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart"],
+  whitelist: ["cart", "wishlist", "collectionItem"],
 };
 
 const rootReducer = combineReducers({
@@ -19,6 +21,7 @@ const rootReducer = combineReducers({
   directory: directoryReducer,
   shop: shopReducer,
   wishlist: wishlistReducer,
+  collectionItem: collectionItemReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

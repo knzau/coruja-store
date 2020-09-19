@@ -13,7 +13,7 @@ const WishlistPage = ({ wishListItems, wishlistItemsCount }) => {
         <Link to="/" className="LinkStyling">
           <span className="navigate-link">Home </span>
         </Link>
-        / Women
+        / Wishlist
       </h2>
       <div className="header-wishlist-wrapper">
         <h1 className="header-wishlist">my wishlist</h1>

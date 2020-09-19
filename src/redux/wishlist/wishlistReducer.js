@@ -1,5 +1,5 @@
 import wishlistActionTypes from "./wishlistActionTypes";
-import { addItemToWishlist, removeItemFromWishlist } from "./wishlistUtils";
+import { addItemToWishlist, removeWishlistItem } from "./wishlistUtils";
 
 const INITIAL_STATE = {
   wishlistItems: [],
@@ -20,10 +20,7 @@ const wishlistReducer = (state = INITIAL_STATE, action) => {
     case wishlistActionTypes.REMOVE_ITEM_FROM_WISHLIST:
       return {
         ...state,
-        wishlistItems: removeItemFromWishlist(
-          state.wishlistItems,
-          action.payload
-        )
+        wishlistItems: removeWishlistItem(state.wishlistItems, action.payload),
       };
     default:
       return state;

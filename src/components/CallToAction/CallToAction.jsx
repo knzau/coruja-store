@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CallToActionStyles.scss";
-import ctaBackgroundImage from "../../images/cta-2.png";
 import CustomButton from "../CustomButton/CustomButton";
 
 import { ReactComponent as PinterestIcon } from "../../icons/icon-pinterest.svg";
@@ -14,9 +14,16 @@ const CallToAction = () => {
       <h1 className="cta-primary-header">
         latest drip<br></br>for you
       </h1>
-      <a href="#shop" className="shop-btn">
-        <CustomButton inverted>Shop now</CustomButton>
-      </a>
+      <Link to="/women">
+        <CustomButton className="women-btn effect01">
+          Shop Women
+        </CustomButton>
+      </Link>
+      <Link to="/men">
+        <CustomButton className="men-btn effect01">
+          Shop Men
+        </CustomButton>
+      </Link>
       <div className="social-media-icons">
         <a href="#twitter" className="link">
           <TwitterIcon className="social-icon" />
@@ -30,9 +37,6 @@ const CallToAction = () => {
         <a href="#pinterest" className="link">
           <PinterestIcon className="social-icon" />
         </a>
-      </div>
-      <div className="cta-bg">
-        <img src={ctaBackgroundImage} alt="cta-img" className="cta-bg-img" />
       </div>
     </div>
   );
