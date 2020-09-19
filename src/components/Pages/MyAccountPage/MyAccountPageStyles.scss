@@ -1,5 +1,5 @@
 .my-account {
-    padding: 0 5%;
+  padding: 0 5%;
   .account-details-wrapper {
     display: flex;
     flex-direction: row;
@@ -7,6 +7,21 @@
     padding: 3rem;
   }
 
+  .header-account-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25rem;
+    background-image: url("https://source.unsplash.com/ZmgJiztRHXE/1200x400");
+    background-size: cover;
+    margin-bottom: 5rem;
+
+    &h1{
+      color: white;
+      font-size: 4rem;
+    }
+  }
   .header__my-account {
     font-size: 5rem;
     text-transform: uppercase;
@@ -24,6 +39,14 @@
     font-weight: 900;
   }
 
+  .header-account{
+      font-size: 3.5rem;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
   .text-my-account {
     font-size: 1.8rem;
     color: #3a3a3a;

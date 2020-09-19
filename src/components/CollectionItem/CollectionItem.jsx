@@ -24,14 +24,12 @@ const CollectionItem = ({
 }) => {
   const { imageUrl, name, price } = item;
   return (
-    <div
-      className="collection-item-wrapper"
-      onClick={() => {
-        openCollectionItem(item);
-      }}
-    >
+    <div className="collection-item-wrapper">
       <div className="collection-item">
         <div
+          onClick={() => {
+            openCollectionItem(item);
+          }}
           className="collection-image"
           style={{ backgroundImage: `url(${imageUrl})` }}
         ></div>
@@ -78,7 +76,4 @@ const mapDispatchToProps = (dispatch) => ({
   openCollectionItem: (item) => dispatch(openCollectionItem(item)),
 });
 
-
-export default withRouter(
-  connect(null, mapDispatchToProps)(CollectionItem)
-);
+export default withRouter(connect(null, mapDispatchToProps)(CollectionItem));

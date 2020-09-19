@@ -26,6 +26,7 @@ const CartDropDown = ({ cartItems, history, dispatch }) => {
           history.push("/checkout");
           dispatch(toggleCartHidden());
         }}
+        className="effect01"
       >
         Go to checkout{" "}
       </CustomButton>

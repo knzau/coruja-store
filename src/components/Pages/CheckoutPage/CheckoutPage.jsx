@@ -1,18 +1,32 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
-import { selectCartItems } from "../../../redux/cart/cartSelector";
+import {
+  selectCartItems,
+  selectCartTotal,
+} from "../../../redux/cart/cartSelector";
+import { selectCurrentUser } from "../../../redux/user/userSelector.js";
 import { connect } from "react-redux";
 import CheckOutItem from "../../CheckOutItem/CheckOutItem";
 import CustomButton from "../../CustomButton/CustomButton";
+import StripeCheckoutButton from "../../StripeCheckoutButton/StripeCheckoutButton";
+
 import "./CheckoutPageStyles.scss";
 
-const CheckoutPage = ({ cartItems, total, history }) => {
+const CheckoutPage = ({ cartItems, total, history, currentUser }) => {
   return (
     <div className="checkout-page">
+      <h2 className="page-link">
+        <Link to="/" className="LinkStyling">
+          <span className="navigate-link">Home </span>
+        </Link>
+        / Your cart
+      </h2>
+      <div className="header-checkout-wrapper">
+        <h1 className="header-wishlist">Your Cart </h1>
+      </div>
       {cartItems.length ? (
         <div className="shopping-cart-wrapper">
-          <h1 className="header-medium center">Your cart</h1>
           <div className="checkout-header">
             <div className="header-block">
               <span>Product</span>
@@ -27,6 +41,9 @@ const CheckoutPage = ({ cartItems, total, history }) => {
               <span>Price</span>
             </div>
             <div className="header-block">
+              <span>Total</span>
+            </div>
+            <div className="header-block">
               <span>Remove</span>
             </div>
           </div>
@@ -35,15 +52,28 @@ const CheckoutPage = ({ cartItems, total, history }) => {
           ))}
 
           <div className="total">
-            <span>Total: ${total}</span>
+            <span>Total: ${total.toFixed(2)}</span>
           </div>
+
+          <div className="test-warning">
+            *Please use the following test credit card for payments*
+            <br />
+            4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+          </div>
+          <CustomButton
+            className="custom-btn"
+            onClick={() => history.push("/")}
+          >
+            &#8592; continue shopping
+          </CustomButton>
+          <StripeCheckoutButton price={total} />
         </div>
       ) : (
         <div className="empty-cart-wrapper">
-          <h1 className="empty-message">Your Cart</h1>
-            <span>Your cart is currently empty.</span>
-            
-          <CustomButton onClick={ () => history.push('/')}>&#8592; continue shopping</CustomButton>
+          <span>Your cart is currently empty.</span>
+          <CustomButton className="effect01" onClick={() => history.push("/")}>
+            &#8592; continue shopping
+          </CustomButton>
         </div>
       )}
     </div>
@@ -52,5 +82,7 @@ const CheckoutPage = ({ cartItems, total, history }) => {
 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
+  total: selectCartTotal,
+  currentUser: selectCurrentUser,
 });
 export default withRouter(connect(mapStateToProps)(CheckoutPage));

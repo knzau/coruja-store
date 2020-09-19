@@ -24,9 +24,6 @@ const Header = ( { currentUser, hidden }) => {
                 <Link to="/men" className="header-link">
                   <li className="nav-menu-item">Men</li>
                 </Link>
-                <Link to="/" className="header-link">
-                  <li className="nav-menu-item">Shipping</li>
-                </Link>
                 <Link to="/contact-us" className="header-link">
                   <li className="nav-menu-item">Contacts</li>
                 </Link>

@@ -11,10 +11,15 @@ import { auth } from "../../../firebase/firebase.utils";
 const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
   return (
     <div className="my-account">
-      <h1 className="page-link">
-        <span className="navigate-link">Home </span>/ Register
-      </h1>
-      <h1 className="header__my-account">My account</h1>
+      <h2 className="page-link">
+        <Link to="/" className="LinkStyling">
+          <span className="navigate-link">Home </span>
+        </Link>
+        / Your cart
+      </h2>
+      <div className="header-account-wrapper">
+        <h1 className="header-account">My account </h1>
+      </div>
       <div className="account-details-wrapper">
         <div className="wishlist">
           <h2 className="header-wishlist">Wishlist</h2>
@@ -28,7 +33,7 @@ const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
             </p>
           )}
           <Link to="/iwish" className="LinkStyling">
-            <CustomButton>View wishlist</CustomButton>
+            <CustomButton className="effect01">View wishlist</CustomButton>
           </Link>
         </div>
         <div className="account-details">
@@ -36,7 +41,9 @@ const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
           <p className="text-my-account">
             Welcome {currentUserName.toUpperCase()}
           </p>
-          <CustomButton onClick={() => auth.signOut()}>Log out</CustomButton>
+          <CustomButton className="effect01" onClick={() => auth.signOut()}>
+            Log out
+          </CustomButton>
         </div>
       </div>
     </div>
