@@ -1,4 +1,4 @@
-import SHOP_DATA from "../../components/Pages/WomensPage/SHOP_DATA";
+import SHOP_DATA from "../../SHOP_DATA";
 import { searchCollectionItem} from "./shopUtils";
 import ShopActionTypes from "./shopTypes";
 

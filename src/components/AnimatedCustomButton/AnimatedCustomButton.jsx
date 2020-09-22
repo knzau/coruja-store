@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./AnimatedCustomButtonStyles.scss";
+import "../../sass/app.scss";
 
 const AnimatedCustomButton = ({ children, ...props }) => {
   return (

@@ -12,17 +12,17 @@ import HeaderSearchBox from "./components/HeaderSearchBox/HeaderSearchBox.jsx";
 import Footer from "./components/Footer/Footer";
 import Copyright from "./components/Copyright/Copyright";
 
-import HomePage from "./components/Pages/HomePage/HomePage";
+import HomePage from "./Pages/HomePage/HomePage.jsx";
 
-import WomensPage from "./components/Pages/WomensPage/WomensPage.jsx";
-import MensPage from "./components/Pages/MensPage/MensPage.jsx";
-import SignInPage from "./components/Pages/SignInPage/SignInPage";
-import MyAccountPage from "./components/Pages/MyAccountPage/MyAccountPage";
-import ContactPage from "./components/Pages/ContactPage/ContactPage";
-import CheckoutPage from "./components/Pages/CheckoutPage/CheckoutPage";
-import WishlistPage from "./components/Pages/WishlistPage/WishlistPage";
-import HatsPage from "./components/Pages/HatsPage/HatsPage.jsx";
-import ShoesPage from "./components/Pages/ShoesPage/ShoesPage.jsx";
+import WomensPage from "./Pages/WomensPage/WomensPage.jsx";
+import MensPage from "./Pages/MensPage/MensPage.jsx";
+import SignInPage from "./Pages/SignInPage/SignInPage";
+import MyAccountPage from "./Pages/MyAccountPage/MyAccountPage";
+import ContactPage from "./Pages/ContactPage/ContactPage";
+import CheckoutPage from "./Pages/CheckoutPage/CheckoutPage.jsx";
+import WishlistPage from "./Pages/WishlistPage/WishlistPage";
+import HatsPage from "./Pages/HatsPage/HatsPage.jsx";
+import ShoesPage from "./Pages/ShoesPage/ShoesPage.jsx";
 
 import "./App.css";
 

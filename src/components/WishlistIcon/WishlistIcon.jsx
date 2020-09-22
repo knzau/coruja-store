@@ -2,19 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectwishlistItemsCount } from "../../redux/wishlist/wishlistSelector.js";
-import { ReactComponent as FavouriteIcon } from "../../icons/favorite_border-24px.svg";
+import sprite from "../../svg-icons/sprite.svg";
 
-import "./WishlistIconStyles.scss";
+import "../../sass/app.scss";
 
 const WishlistIcon = ({ wishlistItemsCount }) => {
   return (
-    <div className="wishlist-count-circle">
+    <div className="wishlist-icon-container">
+      <svg className="heart-icon">
+        <use href={sprite + "#icon-heart-outlined"}></use>
+      </svg>
       {wishlistItemsCount ? (
-        <div className="wishlist-count-wrapper">
-          <span className="wishlist-count">{wishlistItemsCount}</span>
-        </div>
+        <span className="wishlist-count">{wishlistItemsCount}</span>
       ) : null}
-      <FavouriteIcon className="heart-icon" />
     </div>
   );
 };

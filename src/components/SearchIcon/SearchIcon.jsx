@@ -1,13 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ReactComponent as SearchIconSVG } from "../../icons/search-24px.svg";
 import { toggleSearchFieldHidden } from "../../redux/shop/shopActions.js";
-import "./SearchIconStyles.scss";
+import sprite from "../../svg-icons/sprite.svg";
+import "../../sass/app.scss";
 
 const SearchIcon = ({ toggleSearchFieldHidden }) => {
   return (
     <div className="search-icon-wrapper" onClick={toggleSearchFieldHidden}>
-      <SearchIconSVG />
+      <svg className="search-icon">
+        <use href={sprite + "#icon-search"}></use>
+      </svg>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import collectionItemActionTypes from "./collectionItemActionTypes";
 
 const INITIAL_STATE = {
-  collectionItemDetail: [],
+  collectionItemDetail: {},
   modalOpen: false,
 };
 
@@ -10,12 +10,13 @@ const collectionItemReducer = (state = INITIAL_STATE, action) => {
     case collectionItemActionTypes.CLOSE_ITEM_MODAL:
       return {
         ...state,
+        collectionItemDetail: {},
         modalOpen: false,
       };
     case collectionItemActionTypes.OPEN_COLLECTION_ITEM:
       return {
         ...state,
-        collectionItemDetail: [action.payload],
+        collectionItemDetail: { ...action.payload },
         modalOpen: true,
       };
     default:

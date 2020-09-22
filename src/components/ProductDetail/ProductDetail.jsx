@@ -20,8 +20,8 @@ const ProductDetail = ({
   addItem,
   addItemWishlist,
 }) => {
-  const { imageUrl, price, name } = productDetailItem[0];
-  console.log(productDetailItem[0]);
+  const { imageUrl, price, name } = productDetailItem;
+  console.log(productDetailItem);
   console.log(modalOpen);
 
   if (modalOpen === false) {

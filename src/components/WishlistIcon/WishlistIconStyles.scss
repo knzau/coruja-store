@@ -1,35 +1,27 @@
-.wishlist-count-circle {
+.wishlist-icon-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  height: 2.6rem;
-  margin-right: 4rem;
 
-  .wishlist-count-wrapper {
-    position: absolute;
-    left: 1.4rem;
-    width: 1.8rem;
-    height: 1.8rem;
-    bottom: -3px;
-    border-radius: 9px;
-    background-color: rgb(163, 1, 1);
-  }
   .wishlist-count {
-    margin-bottom: 5px;
-    margin-left: 6px;
-    font-size: 1rem;
-    letter-spacing: 0.2px;
-    font-weight: 900;
-    color: white;
-    text-align: center;
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .heart-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-
-    cursor: pointer;
+    @include icon;
   }
 }

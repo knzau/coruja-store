@@ -1,7 +1,7 @@
- .search-icon-wrapper{
-     width: 2.5rem;
-    height: 2.5rem;
-  
-    cursor: pointer;
-    margin-right: 4rem;
- }
+.search-icon-wrapper {
+  position: relative;
+
+  .search-icon {
+    @include icon;
+  }
+}

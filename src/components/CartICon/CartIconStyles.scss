@@ -1,36 +1,31 @@
 .cart-icon {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   height: 2.6rem;
 }
 
 .shopping-icon {
-  width: 2.6rem;
-  height: 2.6rem;
-}
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--color-grey-dark-1);
 
-.cart-itemcount-wrapper {
-  position: absolute;
-  left: 1.4rem;
-  width: 1.8rem;
-  height: 1.8rem;
-  bottom: -3px;
-  background-color: rgb(163, 1, 1);
-  bottom: -3px;
-  border-radius: 9px;
+  &:hover {
+    fill: var(--color-grey-dark-2);
+  }
 }
 
 .item-count {
-  margin-bottom: 5px;
-  margin-left: 6px;
-  font-size: 1rem;
-  letter-spacing: 0.2px;
-  font-weight: 900;
-  color: white;
-  text-align: center;
+  font-size: 0.8rem;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.1rem;
 
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

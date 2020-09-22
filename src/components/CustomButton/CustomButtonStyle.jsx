@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 
 const buttonStyles = css`
-  background-color: #3a3a3a;
+  background-color: var(--color-grey-dark-1);
   color: white;
   border: none;
 
   &:hover {
     background-color: white;
-    color: #3a3a3a;
-    border: 1px solid #3a3a3a;
+    color: var(--color-grey-dark-1);
+    border: 1px solidvar(--color-grey-dark-1);
   }
 `;
 
@@ -16,16 +16,15 @@ const socialMediaBtnStyles = css``;
 
 const invertedButtonStyles = css`
     background-color: white;
-    color: #3a3a3a;
+    color: var(--color-grey-dark-1);
   outline: none;
   border: none;
 
     &:hover {
-      background-color: #3a3a3a;
+      background-color: var(--color-grey-dark-1);
       color: white;
       border: none;
 `;
-
 
 const googleSignInStyles = css`
   background-color: #4285f4;
@@ -62,7 +61,7 @@ export const CustomButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   outline: none;
-  text-decoration-style: none;
+  text-decoration: none;
 
   ${getButtonStyles}
 `;
