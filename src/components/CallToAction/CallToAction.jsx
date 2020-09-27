@@ -8,16 +8,20 @@ import "../../sass/app.scss";
 const CallToAction = () => {
   return (
     <div className="cta-section">
-      <h1 className="primary-header">
-        latest drip<br></br>for you
-      </h1>
       <div className="cta-section__btns">
-        <Link to="/women">
-          <CustomButton className="women-btn effect01">Shop Women</CustomButton>
-        </Link>
-        <Link to="/men">
-          <CustomButton className="men-btn effect01">Shop Men</CustomButton>
-        </Link>
+        <h1 className="hero__header">
+          latest drip<br></br>for you
+        </h1>
+        <div className="cta-btns">
+          <Link to="/women">
+            <CustomButton className="women-btn effect01">
+              Shop Women
+            </CustomButton>
+          </Link>
+          <Link to="/men">
+            <CustomButton className="men-btn effect01">Shop Men</CustomButton>
+          </Link>
+        </div>
       </div>
 
       <div className="social-media-icons">

@@ -26,18 +26,8 @@
 
 /*btn_background*/
 .effect01 {
-  color: #fff;
-  border: 1px solid var(--color-color-grey-dark-1);
-  background-color: var(--color-color-grey-dark-1);
-  overflow: hidden;
   position: relative;
   transition: all 0.3s ease-in-out;
-
-}
-.effect01:hover {
-  border: 1px solid var(--color-color-grey-dark-1);
-  background-color: #fff;
-  text-decoration: none;
 }
 
 /*btn_text*/
@@ -62,7 +52,7 @@
   top: -5rem;
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
-  width: 5rem;
+
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
   z-index: 1;
 }
@@ -108,13 +98,13 @@
   position: absolute;
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
-  width: 50px;
+  width: 5rem;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
   z-index: 1;
 }
 .effect01:hover:after {
   background: #fff;
-  border: 20px solid var(--color-grey-dark-1);
+  border: 2rem solid var(--color-grey-dark-1);
   opacity: 0;
   left: 120%;
   -webkit-transform: rotate(40deg);

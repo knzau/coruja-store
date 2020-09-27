@@ -53,7 +53,7 @@ const ProductDetail = ({
             </div>
             <div className="button-wrapper">
               <CustomButton
-                onClick={() => addItem(productDetailItem[0])}
+                onClick={() => addItem(productDetailItem)}
                 className="effect01"
               >
                 Add to bag
@@ -62,7 +62,7 @@ const ProductDetail = ({
                 src={HeartIcon}
                 alt="heart"
                 className="wishlist-btn"
-                onClick={() => addItemWishlist(productDetailItem[0])}
+                onClick={() => addItemWishlist(productDetailItem)}
               />
             </div>
           </div>

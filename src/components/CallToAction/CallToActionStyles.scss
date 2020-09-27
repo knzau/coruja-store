@@ -1,66 +1,155 @@
 .cta-section {
-  max-width: 100%;
+  min-height: 75vh;
+  width: 100%;
   position: relative;
-  margin-bottom: 1rem;
-  background-image: url("https://source.unsplash.com/du8AbwM5z2g/1600x1000");
+  display: flex;
+  background-image: url("https://source.unsplash.com/du8AbwM5z2g/1200x900");
   background-size: cover;
-  height: 75vh;
+  background-position: center top;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  margin: 6rem 0;
 
-  .primary-header {
+  @include respond(tab-land) {
+    font-size: 2rem;
+    min-height: 60vh;
+    margin: 4rem 0;
+  }
+
+  @include respond(tab-1024) {
+    margin: 2rem 0;
+    background-image: url("https://source.unsplash.com/du8AbwM5z2g/1000x600");
+  }
+
+  @include respond(phone) {
+    background-image: url("https://source.unsplash.com/jlo7Bf4tUoY/700x600");
+  }
+
+  .cta-section__btns {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(2rem);
+
+    & > * {
+      margin-left: 5rem;
+
+      @include respond(tab-1024) {
+        transform: translateY(0rem);
+        margin-left: 4.5rem;
+        transform: translateY(-3rem);
+      }
+    }
+  }
+
+  @include respond(phone) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-btns {
+    display: flex;
+    flex-direction: row;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    & > * {
+      margin-top: 2rem;
+      margin-right: 5rem;
+
+      @include respond(tab-land) {
+        margin-top: 1.5rem;
+        margin-right: 3.5rem;
+      }
+    }
+
+    button {
+      @include respond(tab-land) {
+        width: 100%;
+      }
+
+      @include respond(tab-1024) {
+        font-size: 1.6rem;
+        line-height: 5rem;
+      }
+
+      @include respond(phone) {
+        width: 80%;
+        line-height: none;
+        letter-spacing: 0.7px;
+        height: 5rem;
+        padding: 0;
+        font-size: 1.4rem;
+        transform: translateX(1rem);
+      }
+    }
+  }
+
+  .hero__header {
     font-size: 5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 5px;
     line-height: 1;
-    position: absolute;
     color: var(--color-grey-dark-1);
-    top: 25%;
-    left: 5%;
-  }
 
-  .cta-section__btns {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-left: 5rem;
+    @include respond(tab-land) {
+      font-size: 4.5rem;
+      letter-spacing: 4px;
+    }
 
-    & > * {
-      margin-right: 5rem;
+    @include respond(tab-1024) {
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+    }
+
+    @include respond(phone) {
+      text-align: center;
+      margin: 0;
+      color: white;
     }
   }
 
   .social-media-icons {
+    display: block;
     position: absolute;
-    right: 2rem;
-    top: 35%;
+    right: 5rem;
+    transform: translateY(5rem);
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: row;
+      bottom: 20%;
+      justify-content: center;
+      right: auto;
+    }
   }
 
   .social-icon {
-    display: block;
+    display: flex;
     margin-bottom: 3rem;
     cursor: pointer;
     width: 3rem;
     height: 3rem;
     fill: var(--color-grey-dark-1);
 
+    @include respond(tab-1024) {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @include respond(phone) {
+      margin-right: 2rem;
+      fill: #fff;
+    }
+
     &:hover {
       -webkit-animation: rotate-center 0.6s ease-in-out both;
       animation: rotate-center 0.6s ease-in-out both;
       fill: var(--color-grey-dark-2);
     }
-  }
-
-  .cta-bg-img {
-    width: 100%;
-    filter: brightness(80%);
-  }
-
-  .cta-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
   }
 }

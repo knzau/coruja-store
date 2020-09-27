@@ -23,5 +23,13 @@
 
   .heart-icon {
     @include icon;
+
+    @include respond(phone) {
+      height: 2rem;
+    }
+
+    &:after {
+      color: var(--color-primary);
+    }
   }
 }
