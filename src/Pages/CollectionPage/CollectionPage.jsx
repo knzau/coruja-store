@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import CollectionItem from "../../components/CollectionItem/CollectionItem";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
 
-import "./CollectionPage.scss";
+import "../../sass/app.scss";
 
 const CollectionPage = ({ items, title, productDetailItem }) => {
   return (

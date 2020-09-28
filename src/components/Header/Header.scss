@@ -63,7 +63,6 @@
     transform: translateX(20%);
 
     @include respond(tab-port) {
-      width: 90%;
       transform: translateX(45%);
     }
   }

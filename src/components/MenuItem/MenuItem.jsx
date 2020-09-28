@@ -2,7 +2,7 @@ import React from "react";
 
 import { withRouter } from "react-router-dom";
 import AnimatedCustomButton from "../AnimatedCustomButton/AnimatedCustomButton";
-import "./MenuItemStyles.scss";
+import "../../sass/app.scss";
 
 const MenuItem = ({ title, imageUrl, history, linkUrl, match }) => {
   return (

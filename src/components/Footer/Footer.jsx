@@ -1,10 +1,7 @@
 import React from "react";
-import { ReactComponent as PinterestIcon } from "../../icons/icon-pinterest.svg";
-import { ReactComponent as InstagramIcon } from "../../icons/icon-instagram.svg";
-import { ReactComponent as YoutubeIcon } from "../../icons/icon-youtube.svg";
-import { ReactComponent as TwitterIcon } from "../../icons/icon-twitter.svg";
+import sprite from "../../svg-icons/sprite.svg";
 
-import "./FooterStyles.scss";
+import "../../sass/app.scss";
 
 const Footer = () => {
   return (
@@ -33,16 +30,24 @@ const Footer = () => {
         <h1 className="header-medium">Stay social</h1>
         <div className="footer-social-links">
           <a href="#twitter" className="footer-social-link">
-            <TwitterIcon className="footer-social-icon" />
+            <svg className="footer-social-icon ">
+              <use href={sprite + "#icon-twitter-with-circle"}></use>
+            </svg>
           </a>
-          <a href="#insta" className="footer-social-link">
-            <InstagramIcon className="footer-social-icon" />
+          <a href="#instagram" className="footer-social-link">
+            <svg className="footer-social-icon ">
+              <use href={sprite + "#icon-instagram-with-circle"}></use>
+            </svg>
           </a>
           <a href="#youtube" className="footer-social-link">
-            <YoutubeIcon className="footer-social-icon" />
+            <svg className="footer-social-icon ">
+              <use href={sprite + "#icon-youtube-with-circle"}></use>
+            </svg>
           </a>
           <a href="#pinterest" className="footer-social-link">
-            <PinterestIcon className="footer-social-icon" />
+            <svg className="footer-social-icon ">
+              <use href={sprite + "#icon-pinterest-with-circle"}></use>
+            </svg>
           </a>
         </div>
         <p className="footer-contact">We Work All The Holidays</p>

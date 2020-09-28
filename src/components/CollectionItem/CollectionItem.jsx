@@ -12,7 +12,7 @@ import {
 } from "../../redux/wishlist/wishlistActions";
 
 import "./ScaleUpAnimation.scss";
-import "./CollectionItemStyles.scss";
+import "../../sass/app.scss";
 
 const CollectionItem = ({
   item,

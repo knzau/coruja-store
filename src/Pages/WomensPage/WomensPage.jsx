@@ -4,7 +4,7 @@ import { createStructuredSelector } from "reselect";
 import { selectCollectionsForPreview } from "../../redux/shop/shopSelector.js";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import "./WomensPageStyles.scss";
+import "../../sass/app.scss";
 
 const WomensPage = ({ collections }) => {
   const CollectionItems = Object.values(collections);

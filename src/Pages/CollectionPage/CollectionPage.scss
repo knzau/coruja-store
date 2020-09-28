@@ -1,21 +1,28 @@
-.collection-page{
-    width: 100%;
-}
+.collection-page {
+  width: 100%;
 
-.collection-title{
+  .collection-title {
     text-transform: uppercase;
-    color: #3a3a3a;
+    color: var(--color-grey-dark-1);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 5rem;
     letter-spacing: 2px;
-}
+  }
 
-.collection-items{
+  .collection-items {
+    width: 100%;
     display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     column-gap: 1.5rem;
-  row-gap: 5rem;
-  justify-items: center;
+    row-gap: 5rem;
+    justify-items: center;
+
+    @include respond(phone) {
+      grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      row-gap: 3rem;
+    }
+  }
 }

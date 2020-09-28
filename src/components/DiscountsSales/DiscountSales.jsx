@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./DiscountSalesStyles.scss";
+import "../../sass/app.scss";
 
 import SaleTimeline from "./SaleTimeLine";
 

@@ -4,14 +4,22 @@
   transition: 0.2s all;
   cursor: pointer;
 
+  @include respond(phone) {
+    padding: 1rem 3rem 1rem 1.5rem;
+  }
+
   span {
     font-weight: bold;
     padding: 0;
     margin: 0;
     font-size: 3rem;
     letter-spacing: 2px;
-  }
 
+    @include respond(phone) {
+      font-size: 2rem;
+      letter-spacing: 1.4px;
+    }
+  }
   &:after {
     position: absolute;
     left: 0;
@@ -23,11 +31,15 @@
     width: 100%;
     transition: 0.3s all;
     border-bottom: 1px solid var(--color-grey-light-1);
+
+    @include respond(phone) {
+      height: 3rem;
+    }
   }
 
   &:hover {
-    box-shadow: 12px 9px 0px rgba(255, 255, 255, 1),
-      18px 15px 0px var(--color-primary);
+    box-shadow: 1.2rem 0.9rem 0px rgba(255, 255, 255, 1),
+      1.8rem 1.5rem 0px var(--color-primary);
 
     &:after {
       width: 0%;

@@ -16,33 +16,39 @@
   }
   &.womens {
     min-width: 49%;
-    height: 38rem;
+    min-height: 45%;
     float: right;
     margin-bottom: 1%;
     transform: translateX(2%);
   }
 
   &.mens {
-    transform: translateY(-14rem);
     min-width: 50%;
-    height: 38rem;
+    min-height: 45%;
+    margin-top: 1%;
+    float: left;
+    transform: translateY(-45%);
+
+    @include respond(tab-port) {
+      transform: translateY(-44%);
+    }
   }
   &.hats {
     min-width: 50%;
-    height: 24rem;
+    height: 28%;
     float: left;
   }
 
   &.sneakers {
     min-width: 49%;
-    height: 24rem;
+    height: 28%;
     float: right;
     transform: translateX(2%);
   }
 
   .background-image {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-position: center;
     background-size: cover;
   }

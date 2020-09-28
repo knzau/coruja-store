@@ -1,8 +1,7 @@
 import React from "react";
 
-
 import "../CustomButton/CustomButton";
-import "./SocialMediaBoxStyle.scss";
+import "../../sass/app.scss";
 
 const SocialMediaBox = () => {
   return (

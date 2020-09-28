@@ -4,7 +4,7 @@ import specialDiscountIcon from "../../icons/iconmonstr-christmas-42.svg";
 import moneyReturnsIcon from "../../icons/iconmonstr-award-23.svg";
 import highQualityIcon from "../../icons/iconmonstr-trophy-6.svg";
 
-import "./OurBenefitsStyles.scss";
+import "../../sass/app.scss";
 
 const OurBenefits = () => {
   return (

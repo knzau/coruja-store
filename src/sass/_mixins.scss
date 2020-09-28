@@ -49,3 +49,17 @@
     fill: var(--color-grey-dark-2);
   }
 }
+
+@mixin header--primary {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-grey-dark-1);
+}
+
+@mixin header-medium {
+  font-size: 4rem;
+  color: var(--color-grey-dark-1);
+  letter-spacing: 3px;
+  font-weight: 400;
+}

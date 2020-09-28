@@ -1,6 +1,16 @@
 .directory-menu {
+  margin-top: 10rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  height: 70vh;
+  height: 100vh;
+
+  @include respond(tab-land) {
+    margin-top: 5rem;
+    height: 80vh;
+  }
+
+  @include respond(tab-port) {
+    height: 60vh;
+  }
 }

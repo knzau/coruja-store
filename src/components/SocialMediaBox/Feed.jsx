@@ -1,11 +1,11 @@
 import React from "react";
 import Feed from "react-instagram-authless-feed";
 
-import "./FeedStyles.scss";
+import "../../sass/app.scss";
 
 const IGFeed = () => {
   return (
-    <div className="feed-container" >
+    <div className="feed-container">
       <div className="text-wrapper-social">
         <p className="coruja-store">@corujastore</p>
       </div>

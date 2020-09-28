@@ -2,18 +2,33 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 10rem 0;
   text-align: center;
+
+  @include respond(tab-mini) {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+  }
 }
 
 .benefit-box {
+  margin-bottom: 1.5rem;
   &:not(:last-child) {
     padding-right: 10rem;
+
+    @include respond(tab-mini) {
+      padding: 0;
+    }
   }
 
   span {
-    color: #bababa;
+    color: var(--color-grey-dark-3);
     font-weight: 700;
     letter-spacing: 0.5px;
   }
@@ -22,13 +37,21 @@
 .benefits-icon {
   width: 5rem;
   margin-bottom: 1.5rem;
+
+  @include respond(tab-mini) {
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .benefits__tertiary-header {
   font-size: 1.5rem;
-  color: #3a3a3a;
+  color: var(--color-grey-dark-1);
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   font-weight: 400;
+
+  @include respond(tab-mini) {
+  }
 }

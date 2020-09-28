@@ -5,7 +5,7 @@ import CollectionPage from "../CollectionPage/CollectionPage";
 import { selectCollectionsForPreview } from "../../redux/shop/shopSelector.js";
 import { createStructuredSelector } from "reselect";
 
-import "./ShoesPageStyles.scss";
+import "../../sass/app.scss";
 
 const ShoesPage = ({ collections }) => {
   const CollectionItems = Object.values(collections);
