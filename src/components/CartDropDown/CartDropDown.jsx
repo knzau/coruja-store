@@ -5,9 +5,9 @@ import { withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { selectCartItems } from "../../redux/cart/cartSelector";
-
-import "./CartDropDownStyles.scss";
 import { toggleCartHidden } from "../../redux/cart/cartAction";
+
+import "../../sass/app.scss";
 
 const CartDropDown = ({ cartItems, history, dispatch }) => {
   return (
@@ -28,7 +28,7 @@ const CartDropDown = ({ cartItems, history, dispatch }) => {
         }}
         className="effect01"
       >
-        Go to checkout{" "}
+        checkout
       </CustomButton>
     </div>
   );

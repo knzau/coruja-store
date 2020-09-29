@@ -1,4 +1,4 @@
-.men-page{
+.men-page {
   width: 100%;
 }
 .LinkStyling {
@@ -7,17 +7,14 @@
 }
 
 .page-link {
-  color: #a7a7a7;
-  font-size: 1.4rem;
-  text-align: left;
+  @include page-navigate;
   margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  font-weight: 400;
 }
 .navigate-link {
+  cursor: pointer;
+
   &:hover {
-    color: #3a3a3a;
+    color: var(--color-primary);
     cursor: pointer;
   }
 }

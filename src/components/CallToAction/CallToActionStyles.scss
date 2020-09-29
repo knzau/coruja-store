@@ -23,7 +23,12 @@
   }
 
   @include respond(phone) {
-    background-image: url("https://source.unsplash.com/jlo7Bf4tUoY/700x600");
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(black, 0.4),
+        rgba(black, 0.4)
+      ),
+      url("https://source.unsplash.com/jlo7Bf4tUoY/700x600");
   }
 
   .cta-section__btns {

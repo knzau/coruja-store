@@ -13,6 +13,11 @@
   overflow: hidden;
   transition: all ease 0.3s;
 
+  @include respond(phone) {
+    width: 20rem;
+    height: 30rem;
+  }
+
   &:after {
     transform: scaleY(1);
   }
@@ -28,6 +33,13 @@
   button {
     margin-top: auto !important;
     padding: 0 !important;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+      width: 16rem;
+      height: 4.6rem;
+      letter-spacing: 1.2px;
+    }
   }
 
   .empty-message {

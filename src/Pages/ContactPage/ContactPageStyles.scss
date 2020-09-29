@@ -1,8 +1,9 @@
 .contact-page {
   margin: 5rem auto;
   width: 70%;
+
   .header-medium {
-    font-size: 5rem;
+    @include header-medium;
   }
   .header-small {
     font-size: 1.8rem;
@@ -40,6 +41,11 @@
     gap: 2rem;
     grid-template-rows: 2fr;
     margin-bottom: -6rem;
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      grid-gap: 0px 1rem;
+    }
   }
 
   .contact-form-header {

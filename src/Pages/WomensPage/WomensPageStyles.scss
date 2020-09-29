@@ -4,13 +4,8 @@
 }
 
 .page-link {
-  color: #a7a7a7;
-  font-size: 1.4rem;
-  text-align: left;
+  @include page-navigate;
   margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  font-weight: 400;
 }
 .navigate-link {
   &:hover {

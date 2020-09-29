@@ -6,7 +6,7 @@
   justify-content: space-between;
 
   @include respond(tab-land) {
-    margin-top: -15rem;
+    margin-top: -12rem;
   }
 
   @include respond(tab-port) {
@@ -56,6 +56,13 @@
 
     @include respond(tab-mini) {
       margin-bottom: 3rem;
+      width: 80%;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      line-height: 1;
       width: 80%;
     }
   }
@@ -145,10 +152,15 @@
   }
 
   .newsletter-wrapper {
+    width: 100%;
     border: solid 1px var(--color-grey-dark-3);
     height: 18.5rem;
     color: var(--color-grey-dark-3);
     padding: 2.5rem;
+
+    @include respond(phone) {
+      padding: 1.5rem;
+    }
   }
 
   .newsletter-header {
@@ -175,7 +187,7 @@
   .newsletter-subscibe {
     border: none;
     border-bottom: solid 1px#3a3a3a;
-    width: 65%;
+    width: 100%;
     padding-bottom: 5px;
     outline: none;
 
@@ -187,18 +199,17 @@
   .email-label {
     text-transform: uppercase;
     font-weight: 700;
-    color: #3a3a3a;
-    display: inline-block;
-    transform: translate(-6rem, -2px);
+    color: var(--color-grey-dark-1);
     cursor: pointer;
     outline: none;
     background: transparent;
     border: none;
+    margin-left: -10rem;
 
     @include respond(tab-mini) {
-      width: 100%;
-      position: absolute;
-      left: 18rem;
+      width: auto;
+      float: right;
+      transform: translateY(-1px);
     }
   }
 }

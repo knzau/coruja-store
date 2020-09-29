@@ -5,7 +5,7 @@ import {
   addItem,
   removeItem,
 } from "../../redux/cart/cartAction";
-import "./CheckOutItemStyles.scss";
+import "../../sass/app.scss";
 
 const CheckOutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
@@ -24,8 +24,8 @@ const CheckOutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
           &gt;
         </div>
       </span>
-      <span className="price">$ {(price).toFixed(2)}</span>
-      <span className="price">$ {(price * quantity).toFixed(2)}</span>
+      <span className="price">$ {price.toFixed(2)}</span>
+      <span className="total-price">$ {(price * quantity).toFixed(2)}</span>
       <div className="remove-button" onClick={() => clearItem(cartItem)}>
         &#10005;
       </div>

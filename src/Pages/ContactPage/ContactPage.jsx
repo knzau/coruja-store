@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import FormInput from "../../components/FormInput/FormInput";
 import { auth } from "../../firebase/firebase.utils.js";
+import { Link } from "react-router-dom";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import "./ContactPageStyles.scss";
+import "../../sass/app.scss";
 
 class ContactPage extends Component {
   constructor() {
@@ -36,6 +37,12 @@ class ContactPage extends Component {
   render() {
     return (
       <div className="contact-page">
+        <h1 className="page-link">
+          <Link to="/" className="LinkStyling">
+            <span className="navigate-link">Home </span>
+          </Link>
+          / Contacts
+        </h1>
         <h1 className="header-medium center">Contact Us</h1>
         <h2 className="header-small center">Need Help?</h2>
         <p className="text-details-center">

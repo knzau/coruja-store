@@ -11,7 +11,7 @@ import CheckOutItem from "../../components/CheckOutItem/CheckOutItem";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import StripeCheckoutButton from "../../components/StripeCheckoutButton/StripeCheckoutButton";
 
-import "./CheckoutPageStyles.scss";
+import "../../sass/app.scss";
 
 const CheckoutPage = ({ cartItems, total, history, currentUser }) => {
   return (
@@ -40,10 +40,10 @@ const CheckoutPage = ({ cartItems, total, history, currentUser }) => {
             <div className="header-block">
               <span>Price</span>
             </div>
-            <div className="header-block">
+            <div className="header-block total-header">
               <span>Total</span>
             </div>
-            <div className="header-block">
+            <div className="header-block remove">
               <span>Remove</span>
             </div>
           </div>

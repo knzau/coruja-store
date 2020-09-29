@@ -15,15 +15,16 @@ const buttonStyles = css`
 const socialMediaBtnStyles = css``;
 
 const invertedButtonStyles = css`
-    background-color: white;
-    color: var(--color-grey-dark-1);
+  background-color: white;
+  color: var(--color-grey-dark-1);
   outline: none;
   border: none;
 
-    &:hover {
-      background-color: var(--color-grey-dark-1);
-      color: white;
-      border: none;
+  &:hover {
+    background-color: var(--color-grey-dark-1);
+    color: white;
+    border: none;
+  }
 `;
 
 const googleSignInStyles = css`
