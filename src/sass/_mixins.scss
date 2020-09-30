@@ -46,7 +46,7 @@
   fill: var(--color-grey-dark-1);
 
   &:hover {
-    fill: var(--color-grey-dark-2);
+    fill: var(--color-primary);
   }
 }
 
@@ -72,8 +72,12 @@
   text-align: left;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  font-weight: 400;
+  font-weight: 700;
+  cursor: pointer;
 
+  &:hover {
+    color: var(--color-primary);
+  }
   @include respond(phone) {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;

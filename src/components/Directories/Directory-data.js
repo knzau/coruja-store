@@ -6,18 +6,18 @@ const SectionsData = [
     linkUrl: "hats",
   },
   {
-    title: "womens",
+    title: "women's",
     imageUrl: "https://source.unsplash.com/bWUOx0SaSAk/1200x700",
     size: "large",
     id: 2,
-    linkUrl: "women",
+    linkUrl: "women's",
   },
   {
-    title: "mens",
+    title: "men's",
     imageUrl: "https://source.unsplash.com/SnwHgwQ085I/1200x700",
     size: "large",
     id: 4,
-    linkUrl: "men",
+    linkUrl: "men's",
   },
   {
     title: "sneakers",

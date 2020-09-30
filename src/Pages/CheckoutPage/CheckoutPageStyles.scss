@@ -15,6 +15,14 @@
     margin-bottom: 4rem;
   }
 
+  .page-link {
+    @include page-navigate;
+    margin: 3rem 0;
+  }
+  .is-active {
+    color: var(--color-grey-dark-1);
+  }
+
   .center {
     text-align: center;
   }
@@ -96,8 +104,10 @@
   .test-warning {
     text-align: center;
     margin-top: 7rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: orangered;
+    line-height: 1.5;
+    letter-spacing: 0.6px;
     margin-bottom: 4rem;
   }
   .shopping-cart-wrapper {

@@ -29,4 +29,23 @@
       row-gap: 2rem;
     }
   }
+
+  .link-styling {
+    font-size: 1.4rem;
+    color: var(--color-grey-dark-3);
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  .page-link {
+    @include page-navigate;
+    margin: 3rem 0;
+  }
+  .is-active {
+    color: var(--color-grey-dark-1);
+
+  }
 }

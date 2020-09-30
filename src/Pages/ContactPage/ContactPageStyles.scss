@@ -60,4 +60,11 @@
   .btn-large {
     width: 100%;
   }
+
+  .page-link {
+    @include page-navigate;
+  }
+  .is-active {
+    color: var(--color-grey-dark-1);
+  }
 }

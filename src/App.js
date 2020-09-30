@@ -5,7 +5,7 @@ import { createStructuredSelector } from "reselect";
 
 import { selectCurrentUser } from "./redux/user/userSelector";
 import { setCurrentUser } from "./redux/user/userActions";
-import { selectCollectionsForPreview } from "./redux/shop/shopSelector";
+import { selectCollectionsForPages } from "./redux/shop/shopSelector";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 import HeaderSearchBox from "./components/HeaderSearchBox/HeaderSearchBox.jsx";
@@ -13,18 +13,14 @@ import Footer from "./components/Footer/Footer";
 import Copyright from "./components/Copyright/Copyright";
 
 import HomePage from "./Pages/HomePage/HomePage.jsx";
-
-import WomensPage from "./Pages/WomensPage/WomensPage.jsx";
-import MensPage from "./Pages/MensPage/MensPage.jsx";
+import ShopPage from "./Pages/ShopPage/ShopPage.jsx";
 import SignInPage from "./Pages/SignInPage/SignInPage";
 import MyAccountPage from "./Pages/MyAccountPage/MyAccountPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
 import CheckoutPage from "./Pages/CheckoutPage/CheckoutPage.jsx";
 import WishlistPage from "./Pages/WishlistPage/WishlistPage";
-import HatsPage from "./Pages/HatsPage/HatsPage.jsx";
-import ShoesPage from "./Pages/ShoesPage/ShoesPage.jsx";
 
-import "./App.css";
+import "./sass/app.scss";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -58,10 +54,7 @@ class App extends Component {
         <HeaderSearchBox />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/men" component={MensPage} />
-          <Route path="/women" component={WomensPage} />
-          <Route path="/hats" component={HatsPage} />
-          <Route path="/sneakers" component={ShoesPage} />
+          <Route path="/shop" component={ShopPage} />
           <Route
             exact
             path="/signin"
@@ -93,7 +86,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  collectionsArray: selectCollectionsForPreview,
+  collectionsArray: selectCollectionsForPages,
 });
 
 const mapDispatchToProps = (dispatch) => ({

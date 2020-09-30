@@ -8,7 +8,7 @@ const buttonStyles = css`
   &:hover {
     background-color: white;
     color: var(--color-grey-dark-1);
-    border: 1px solidvar(--color-grey-dark-1);
+    border: 1px solid var(--color-grey-dark-1);
   }
 `;
 

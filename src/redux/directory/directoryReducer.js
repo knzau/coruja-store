@@ -7,14 +7,14 @@ const INITIAL_STATE = {
       linkUrl: "hats",
     },
     {
-      title: "womens",
+      title: "women",
       imageUrl: "https://source.unsplash.com/bWUOx0SaSAk/1200x700",
       size: "large",
       id: 2,
       linkUrl: "women",
     },
     {
-      title: "mens",
+      title: "men",
       imageUrl: "https://source.unsplash.com/SnwHgwQ085I/1200x700",
       size: "large",
       id: 4,

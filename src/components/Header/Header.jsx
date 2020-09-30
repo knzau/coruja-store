@@ -21,13 +21,17 @@ const Header = ({ currentUser, hidden }) => {
             <NavLink
               className="nav-link"
               activeClassName="is-active"
-              to="/women"
+              to="/shop/women"
             >
               Women
             </NavLink>
           </li>
           <li className="nav-menu-item">
-            <NavLink to="/men" activeClassName="is-active" className="nav-link">
+            <NavLink
+              to="/shop/men"
+              activeClassName="is-active"
+              className="nav-link"
+            >
               Men
             </NavLink>
           </li>

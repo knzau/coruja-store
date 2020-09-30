@@ -17,7 +17,7 @@
     background-size: cover;
     margin-bottom: 5rem;
 
-    &h1{
+    &h1 {
       color: white;
       font-size: 4rem;
     }
@@ -39,8 +39,15 @@
     font-weight: 900;
   }
 
-  .header-account{
-      font-size: 3.5rem;
+  .nav-link {
+    @include page-navigate;
+  }
+  .is-active {
+    color: var(--color-primary);
+  }
+
+  .header-account {
+    font-size: 3.5rem;
     text-transform: uppercase;
     color: white;
     margin-bottom: 2rem;
@@ -51,5 +58,13 @@
     font-size: 1.8rem;
     color: #3a3a3a;
     margin-bottom: 2rem;
+  }
+
+  .page-link {
+    @include page-navigate;
+    margin: 3rem 0;
+  }
+  .is-active {
+    color: var(--color-grey-dark-1);
   }
 }

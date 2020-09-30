@@ -9,11 +9,11 @@ import "../../sass/app.scss";
 const WishlistIcon = ({ wishlistItemsCount }) => {
   return (
     <div className="wishlist-icon-container">
-      <svg className="heart-icon">
+      <svg className="heart-icon heartbeat">
         <use href={sprite + "#icon-heart-outlined"}></use>
       </svg>
       {wishlistItemsCount ? (
-        <span className="wishlist-count">{wishlistItemsCount}</span>
+        <span className="wishlist-count bounce-top">{wishlistItemsCount}</span>
       ) : null}
     </div>
   );

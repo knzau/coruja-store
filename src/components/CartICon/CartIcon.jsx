@@ -11,12 +11,11 @@ import "../../sass/app.scss";
 const CartIcon = ({ toggleCartHidden, itemCount }) => {
   return (
     <div className="cart-icon" onClick={toggleCartHidden}>
-      <svg className="shopping-icon">
+      <svg className="shopping-icon ">
         <use href={sprite + "#icon-shopping-cart"}></use>
       </svg>
-      {itemCount ? (     
-          <span className="item-count">{itemCount}</span>
-
+      {itemCount ? (
+        <span className="item-count bounce-top">{itemCount}</span>
       ) : null}
     </div>
   );

@@ -13,12 +13,12 @@ const CallToAction = () => {
           latest drip<br></br>for you
         </h1>
         <div className="cta-btns">
-          <Link to="/women">
+          <Link to="/shop/women">
             <CustomButton className="women-btn effect01">
               Shop Women
             </CustomButton>
           </Link>
-          <Link to="/men">
+          <Link to="shop/men">
             <CustomButton className="men-btn effect01">Shop Men</CustomButton>
           </Link>
         </div>

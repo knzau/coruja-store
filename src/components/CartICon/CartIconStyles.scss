@@ -18,6 +18,11 @@
   }
 }
 
+.bounce-top {
+  -webkit-animation: bounce-top 0.9s both;
+  animation: bounce-top 0.9s both;
+}
+
 .item-count {
   font-size: 0.8rem;
   height: 1.75rem;

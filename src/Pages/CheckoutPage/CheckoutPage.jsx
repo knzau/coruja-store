@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import {
   selectCartItems,
@@ -13,13 +13,13 @@ import StripeCheckoutButton from "../../components/StripeCheckoutButton/StripeCh
 
 import "../../sass/app.scss";
 
-const CheckoutPage = ({ cartItems, total, history, currentUser }) => {
+const CheckoutPage = ({ cartItems, total, history }) => {
   return (
     <div className="checkout-page">
       <h2 className="page-link">
-        <Link to="/" className="LinkStyling">
+        <NavLink to="/" className="LinkStyling" activeClassName="is-active">
           <span className="navigate-link">Home </span>
-        </Link>
+        </NavLink>
         / Your cart
       </h2>
       <div className="header-checkout-wrapper">
@@ -58,7 +58,7 @@ const CheckoutPage = ({ cartItems, total, history, currentUser }) => {
           <div className="test-warning">
             *Please use the following test credit card for payments*
             <br />
-            4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+            4242 4242 4242 4242 - Exp: 01/21 - CVV: 123
           </div>
           <CustomButton
             className="custom-btn"

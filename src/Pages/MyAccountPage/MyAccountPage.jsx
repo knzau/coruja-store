@@ -4,18 +4,19 @@ import { createStructuredSelector } from "reselect";
 import { selectCurrentUserName } from "../../redux/user/userSelector.js";
 import { selectwishlistItemsCount } from "../../redux/wishlist/wishlistSelector.js";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import { Link } from "react-router-dom";
-import "./MyAccountPageStyles.scss";
+import { Link, NavLink } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils.js";
+
+import "../../sass/app.scss";
 
 const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
   return (
     <div className="my-account">
       <h2 className="page-link">
-        <Link to="/" className="LinkStyling">
-          <span className="navigate-link">Home </span>
-        </Link>
-        / Your cart
+        <NavLink className="nav-link" activeClassName="is-active" to="/">
+          Home
+        </NavLink>
+        / My Account
       </h2>
       <div className="header-account-wrapper">
         <h1 className="header-account">My account </h1>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FormInput from "../../components/FormInput/FormInput";
 import { auth } from "../../firebase/firebase.utils.js";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import "../../sass/app.scss";
 
@@ -38,9 +38,9 @@ class ContactPage extends Component {
     return (
       <div className="contact-page">
         <h1 className="page-link">
-          <Link to="/" className="LinkStyling">
+          <NavLink to="/" className="LinkStyling" activeClassName="is-active">
             <span className="navigate-link">Home </span>
-          </Link>
+          </NavLink>
           / Contacts
         </h1>
         <h1 className="header-medium center">Contact Us</h1>
