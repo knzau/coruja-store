@@ -16,7 +16,7 @@
   }
   &.women {
     min-width: 49%;
-    min-height: 45%;
+    min-height: 65%;
     float: right;
     margin-bottom: 1%;
     transform: translateX(2%);
@@ -24,24 +24,20 @@
 
   &.men {
     min-width: 50%;
-    min-height: 45%;
-    margin-top: 1%;
+    min-height: 65%;
     float: left;
-    transform: translateY(-45%);
-
-    @include respond(tab-port) {
-      transform: translateY(-44%);
-    }
+    transform: translateY(-46%);
   }
+
   &.hats {
     min-width: 50%;
-    height: 28%;
+    height: 35%;
     float: left;
   }
 
   &.sneakers {
     min-width: 49%;
-    height: 28%;
+    height: 35%;
     float: right;
     transform: translateX(2%);
   }

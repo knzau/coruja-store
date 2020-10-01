@@ -1,17 +1,9 @@
 .discounts-sales {
-  margin-top: -12rem;
+  margin-top: 0;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  @include respond(tab-land) {
-    margin-top: -12rem;
-  }
-
-  @include respond(tab-port) {
-    margin-top: -10rem;
-  }
 
   @include respond(tab-mini) {
     display: flex;
