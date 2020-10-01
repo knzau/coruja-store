@@ -21,7 +21,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
-  console.log(snapShot);
+
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -66,7 +66,7 @@ export const convertCollectionSnapshotToMap = (collections) => {
       id: doc.id,
       title,
       items,
-    };  
+    };
   });
 
   return transformedCollection.reduce((accumulator, collection) => {

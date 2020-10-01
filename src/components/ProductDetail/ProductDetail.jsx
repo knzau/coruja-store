@@ -21,8 +21,6 @@ const ProductDetail = ({
   addItemWishlist,
 }) => {
   const { imageUrl, price, name } = productDetailItem;
-  console.log(productDetailItem);
-  console.log(modalOpen);
 
   if (modalOpen === false) {
     return null;

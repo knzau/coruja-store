@@ -9,8 +9,6 @@ import ProductDetail from "../../components/ProductDetail/ProductDetail";
 import "../../sass/app.scss";
 
 const CollectionPage = ({ collection, productDetailItem, match }) => {
-  console.log(collection);
-  console.log(match.params.collectionId);
   const { items, title } = collection;
 
   return (

@@ -1,9 +1,9 @@
 .directory-menu {
-  margin-top: 10rem;
+  margin: 5rem 0;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  height: 70vh;
 
   @include respond(tab-land) {
     margin-top: 5rem;
