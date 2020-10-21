@@ -47,18 +47,19 @@
       color: var(--color-grey-dark-3);
       width: 15%;
 
-      &:not(:first-child) {
-        @include respond(phone) {
-          transform: translateX(-16%);
-        }
-      }
+      // &:not(:first-child) {
+      //   // @include respond(phone) {
+      //   //   transform: translateX(-16%);
+      //   // }
+      // }
 
       &:last-child {
-        width: 5%;
+        width: 10%;
+      }
 
-        @include respond(phone) {
-          opacity: 0;
-        }
+      @include respond(phone) {
+        letter-spacing: 1px;
+        font-size: 1rem;
       }
     }
   }

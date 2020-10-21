@@ -21,6 +21,7 @@ import CheckoutPage from "./Pages/CheckoutPage/CheckoutPage.jsx";
 import WishlistPage from "./Pages/WishlistPage/WishlistPage";
 
 import "./sass/app.scss";
+require("dotenv").config();
 
 class App extends Component {
   unsubscribeFromAuth = null;

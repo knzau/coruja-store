@@ -10,23 +10,35 @@ import "../../sass/app.scss";
 const CheckOutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
-    <div className="checkout-item">
-      <div className="image-container">
+    <div className="checkout-container">
+      <div className="image-container checkout-item">
         <img src={imageUrl} alt="" className="item" />
       </div>
-      <span className="name">{name}</span>
-      <span className="quantity">
+      <div className="name checkout-item">
+        <span>{name}</span>
+      </div>
+      <div className="quantity checkout-item">
         <div className="arrow" onClick={() => removeItem(cartItem)}>
           &lt;
         </div>
-        <span className="value">{quantity}</span>
+        <div className="value">
+          <span>{quantity}</span>
+        </div>
         <div className="arrow" onClick={() => addItem(cartItem)}>
           &gt;
         </div>
-      </span>
-      <span className="price">$ {price.toFixed(2)}</span>
-      <span className="total-price">$ {(price * quantity).toFixed(2)}</span>
-      <div className="remove-button" onClick={() => clearItem(cartItem)}>
+      </div>
+      <div className="price checkout-item">
+        <span>$ {price.toFixed(2)}</span>
+      </div>
+      <div className="total-price checkout-item">
+        <span>$ {(price * quantity).toFixed(2)}</span>
+      </div>
+
+      <div
+        className="remove-button checkout-item"
+        onClick={() => clearItem(cartItem)}
+      >
         &#10005;
       </div>
     </div>
