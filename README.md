@@ -7,11 +7,9 @@
    <a href="https://coruja-live.herokuapp.com/">View Live</a>
   </p>
 </p>
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
 
 ### Built With
 
@@ -19,9 +17,6 @@
 * [Redux](#redux)
 * [Firebase](#firebase)
 * [Sass](#sass)
-
-
-
 
 <!-- GETTING STARTED -->
 
@@ -39,10 +34,6 @@ npm install
 ```sh
 npm start
 ```
-
-
-
-
 <!-- CONTACT -->
 ## Contact
 
