@@ -3,12 +3,11 @@
   <h3 align="center">FASHION E-COMMERCE STORE</h3>
   <p align="center">
    A fashion virtual store with user authentification (user persistance), Shopping Cart, Auth-less Instagram feed and other features.
-    <br />
-   
-    <a href="https://coruja-live.herokuapp.com/">View Live</a>
+    <br /> 
+   <a href="https://coruja-live.herokuapp.com/">View Live</a>
   </p>
 </p>
-
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -47,7 +46,7 @@ npm start
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@ken_nzau](https://twitter.com/ken_nzau) - email
+Ken Nzau - [kenn.nzau@gmail.com](https://twitter.com/ken_nzau)
 
 
 
