@@ -21,6 +21,7 @@ import CheckoutPage from "./Pages/CheckoutPage/CheckoutPage.jsx";
 import WishlistPage from "./Pages/WishlistPage/WishlistPage";
 
 import "./sass/app.scss";
+import TopStrip from "./components/TopStrip/TopStrip";
 require("dotenv").config();
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <TopStrip />
         <HeaderSearchBox />
         <Switch>
           <Route exact path="/" component={HomePage} />

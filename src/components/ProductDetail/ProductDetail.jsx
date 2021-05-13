@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import CustomButton from "../CustomButton/CustomButton";
 import HeartIcon from "../../icons/icons8-heart-144.png";
+import CloseBtn from "../../svg-icons/CloseBtn";
 import { addItem } from "../../redux/cart/cartAction";
 import { closeProductDetailModal } from "../../redux/collectionItemDetail/collectionItemAction.js";
 import { addItemWishlist } from "../../redux/wishlist/wishlistActions";
@@ -10,7 +11,7 @@ import {
   selectModalOpen,
 } from "../../redux/collectionItemDetail/collectionItemSelector";
 
-import "./ProductDetailStyles.scss";
+import "../../sass/app.scss";
 import { createStructuredSelector } from "reselect";
 
 const ProductDetail = ({
@@ -36,7 +37,7 @@ const ProductDetail = ({
               onClick={() => closeProductDetailModal(productDetailItem[0])}
               className="popup__close"
             >
-              &times;
+              <CloseBtn />
             </span>
             <h1 className="header-medium">{name}</h1>
             <p className="text-details">

@@ -15,7 +15,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-instagram-authless-feed": "github:jamesmoriarty/react-instagram-authless-feed",
+    "react-instagram-authless-feed": "github:jamesmoriarty/react-instagram-authless-feed#v2.0.0",
     "react-instagram-embed": "^1.5.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",

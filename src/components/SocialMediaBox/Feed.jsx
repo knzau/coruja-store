@@ -13,7 +13,7 @@ const IGFeed = () => {
       <div className="text-wrapper-social">
         <p className="coruja-store">@corujastore</p>
       </div>
-      <Feed username="ken_nzau" classname="Feeds" classnameLoading="Loading" />
+      <Feed username="ken_nzau" className="Feeds" classNameLoading="Loading" />
     </div>
   );
 };

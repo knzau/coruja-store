@@ -31,23 +31,23 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  padding: 5rem 15rem;
+  font-family: "Montserrat", sans-serif;
+  padding: 0rem 10rem;
   font-weight: 400;
 
   @include respond(tab-land) {
-    padding: 5rem 10rem;
+    padding: 0rem 10rem;
   }
 
   @include respond(tab-1024) {
-    padding: 4rem 8rem;
+    padding: 0rem 8rem;
   }
   @include respond(tab-port) {
-    padding: 3rem 6rem;
+    padding: 0rem 6rem;
   }
 
   @include respond(phone) {
-    padding: 3rem 3rem;
+    padding: 0rem 3rem;
   }
 }
 

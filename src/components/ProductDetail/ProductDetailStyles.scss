@@ -1,5 +1,5 @@
 @mixin centerfix {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -33,46 +33,69 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    width: 55%;
+    width: 50%;
     height: 70%;
     box-shadow: 0 2rem 4rem rgba(black, 0.2);
     background-color: white;
     border-radius: 3px;
-    display: table;
+    display: flex;
     overflow: hidden;
     opacity: 1;
     visibility: visible;
     transition: all 0.4s 0.2s;
     overflow: hidden;
+
+    @include respond(tab-mini) {
+      flex-wrap: wrap;
+    }
   }
 
   .popup__left-box {
-    background-size: cover;
-
-    display: table-cell;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
     padding: 3rem 3rem;
+
+    .product-img {
+      max-width: 100%;
+    }
+
+    @include respond(tab-mini) {
+      width: 50%;
+    }
   }
-  .product-img {
-    height: 50%;
-  }
+
   .popup__right-box {
-    width: 60%;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 3rem 5rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 3rem;
     color: #3a3a3a;
   }
 
   .popup__close {
     position: absolute;
-    top: 2rem;
+    top: 3rem;
     right: 3rem;
     font-size: 3rem;
     cursor: pointer;
+
     color: #3a3a3a;
+    z-index: 4000;
 
     &:hover {
       color: gray;
+
+      svg {
+        fill: var(--color-primary);
+      }
+    }
+
+    svg {
+      fill: #3a3a3a;
     }
   }
   .text-details {
@@ -85,12 +108,12 @@
 
   .price-wrapper {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 2rem;
   }
   .price {
     font-size: 2.5rem;
     color: gray;
-    margin-right: 45%;
   }
 
   .available {
@@ -116,8 +139,14 @@
 }
 
 .header-medium {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #3a3a3a;
   letter-spacing: 3px;
-  font-weight: 400;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 1.2px;
+
+  @include respond(tab-mini) {
+    font-size: 2rem;
+  }
 }

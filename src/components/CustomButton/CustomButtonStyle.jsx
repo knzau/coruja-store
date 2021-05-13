@@ -56,7 +56,7 @@ export const CustomButtonContainer = styled.button`
   padding: 0 1.5rem 0 1.5rem;
   font-size: 1.6rem;
   text-transform: uppercase;
-  font-family: "Lato";
+  font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   cursor: pointer;
   display: flex;

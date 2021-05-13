@@ -3,11 +3,13 @@
   width: 100%;
   position: relative;
   display: flex;
-  background-image: url("https://source.unsplash.com/du8AbwM5z2g/1200x900");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("https://rcyneamb.sirv.com/coruja-store/pexels-yan-krukov-7312383.jpg");
   background-size: cover;
-  background-position: center top;
+  background-position: center 30%;
   justify-content: flex-start;
   align-items: center;
+
   overflow: hidden;
   margin: 3rem 0;
 
@@ -98,7 +100,7 @@
     text-transform: uppercase;
     letter-spacing: 5px;
     line-height: 1;
-    color: var(--color-grey-dark-1);
+    color: white;
 
     @include respond(tab-land) {
       font-size: 4.5rem;
