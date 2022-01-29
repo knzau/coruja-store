@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -22,13 +22,13 @@ import WishlistPage from "./Pages/WishlistPage/WishlistPage";
 
 import "./sass/app.scss";
 import TopStrip from "./components/TopStrip/TopStrip";
-require("dotenv").config();
 
 class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser, collectionsArray } = this.props;
+    console.log(collectionsArray);
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = createUserProfileDocument(userAuth);
@@ -55,14 +55,18 @@ class App extends Component {
       <div className="App">
         <TopStrip />
         <HeaderSearchBox />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<ShopPage />} />
           <Route
             exact
             path="/signin"
             render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
+              this.props.currentUser ? (
+                <Navigate replace to="/" />
+              ) : (
+                <SignInPage />
+              )
             }
           />
           <Route
@@ -70,16 +74,16 @@ class App extends Component {
             path="/myaccount"
             render={() =>
               this.props.currentUser === null ? (
-                <Redirect to="/" />
+                <Navigate replace to="/" />
               ) : (
                 <MyAccountPage />
               )
             }
           />
-          <Route path="/iwish" component={WishlistPage} />
-          <Route exact path="/checkout" component={CheckoutPage} />
-          <Route path="/contact-us" component={ContactPage} />
-        </Switch>
+          <Route path="/iwish" element={<WishlistPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/contact-us" element={<ContactPage />} />
+        </Routes>
         <Footer />
         <Copyright />
       </div>

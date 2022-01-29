@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import {
   selectCartItems,
@@ -9,6 +9,7 @@ import { selectCurrentUser } from "../../redux/user/userSelector.js";
 import { connect } from "react-redux";
 import CheckOutItem from "../../components/CheckOutItem/CheckOutItem";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import { withRouter } from "../../utils.js";
 import StripeCheckoutButton from "../../components/StripeCheckoutButton/StripeCheckoutButton";
 
 import "../../sass/app.scss";

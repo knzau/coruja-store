@@ -1,7 +1,7 @@
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import CartItem from "../CartItem/CartItem";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../../utils";
 
 import { connect } from "react-redux";
 import { selectCartItems } from "../../redux/cart/cartSelector";

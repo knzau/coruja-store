@@ -1,5 +1,6 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { withRouter } from "../../utils";
 import { connect } from "react-redux";
 import LoadSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import CollectionPage from "../CollectionPage/CollectionPage";
@@ -17,26 +18,33 @@ class ShopPage extends React.Component {
   componentDidMount() {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection("collections");
+    console.log(collectionRef);
 
-    collectionRef.onSnapshot(async (snapshot) => {
-      const collectionsMap = convertCollectionSnapshotToMap(snapshot);
-      updateCollections(collectionsMap);
-      this.setState({ loading: false });
-    });
+    this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
+      async (snapshot) => {
+        const collectionsMap = convertCollectionSnapshotToMap(snapshot);
+        console.log(collectionsMap);
+        updateCollections(collectionsMap);
+        this.setState({ loading: false });
+      }
+    );
   }
 
   render() {
-    const { match } = this.props;
+    const { location } = this.props;
     const { loading } = this.state;
+
     return (
       <div>
         <div className="shop-page">
-          <Route
-            path={`${match.path}/:collectionId`}
-            render={(props) => (
-              <CollectionPageWithSpinner isLoading={loading} {...props} />
-            )}
-          />
+          <Routes>
+            <Route
+              path={`${location?.path}/:collectionId`}
+              render={(props) => (
+                <CollectionPageWithSpinner isLoading={loading} {...props} />
+              )}
+            />
+          </Routes>
         </div>
       </div>
     );
@@ -48,4 +56,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updateCollections(collectionsMap)),
 });
 
-export default connect(null, mapDispatchToProps)(ShopPage);
+export default withRouter(connect(null, mapDispatchToProps)(ShopPage));

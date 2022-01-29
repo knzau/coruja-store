@@ -2,7 +2,7 @@ import React from "react";
 import ShoppingBagCart from "../../icons/shopping-bag-cart.png";
 import DeleteIcon from "../../icons/icons8-delete-512.png";
 import HeartIcon from "../../icons/icons8-heart-144.png";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../../utils";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cartAction";
 import { openCollectionItem } from "../../redux/collectionItemDetail/collectionItemAction.js";

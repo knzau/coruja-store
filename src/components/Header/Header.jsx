@@ -19,8 +19,9 @@ const Header = ({ currentUser, hidden }) => {
         <ul className="header__nav-menu-items">
           <li className="nav-menu-item">
             <NavLink
-              className="nav-link"
-              activeClassName="is-active"
+              className={({ isActive }) =>
+                isActive ? "is-active" : "nav-link"
+              }
               to="/shop/women"
             >
               Women

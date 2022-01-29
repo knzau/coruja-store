@@ -17,7 +17,6 @@ class SignUpComponent extends Component {
     };
   }
 
-
   handleSubmit = async (event) => {
     event.preventDefault();
 
