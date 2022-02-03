@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectCurrentUserName } from "../../redux/user/userSelector.js";
+import {
+  selectCurrentUser,
+  selectCurrentUserName,
+} from "../../redux/user/userSelector.js";
 import { selectwishlistItemsCount } from "../../redux/wishlist/wishlistSelector.js";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils.js";
 
 import "../../sass/app.scss";
 
-const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
+const MyAccount = ({ wishlistItemsCount, currentUserName, currentUser }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    auth.signOut();
+    navigate("/signin");
+  };
+
+  useEffect(() => {
+    if (currentUser === null || !currentUser) {
+      return navigate("/signin");
+    }
+  }, [currentUser, navigate]);
+
   return (
     <div className="my-account">
       <h2 className="page-link">
-        <NavLink className="nav-link" activeClassName="is-active" to="/">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "is-active" : "nav-link LinkStyling"
+          }
+          to="/"
+        >
           Home
         </NavLink>
         / My Account
@@ -40,9 +61,9 @@ const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
         <div className="account-details">
           <h2 className="header-wishlist">Account Details</h2>
           <p className="text-my-account">
-            Welcome {currentUserName.toUpperCase()}
+            Welcome {currentUserName && currentUserName?.toUpperCase()}
           </p>
-          <CustomButton className="effect01" onClick={() => auth.signOut()}>
+          <CustomButton className="effect01" onClick={handleLogout}>
             Log out
           </CustomButton>
         </div>
@@ -54,6 +75,7 @@ const MyAccount = ({ wishlistItemsCount, currentUserName }) => {
 const mapStateToProps = createStructuredSelector({
   wishlistItemsCount: selectwishlistItemsCount,
   currentUserName: selectCurrentUserName,
+  currentUser: selectCurrentUser,
 });
 
 export default connect(mapStateToProps)(MyAccount);

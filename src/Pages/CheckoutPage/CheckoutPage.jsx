@@ -18,7 +18,12 @@ const CheckoutPage = ({ cartItems, total, history }) => {
   return (
     <div className="checkout-page">
       <h2 className="page-link">
-        <NavLink to="/" className="LinkStyling" activeClassName="is-active">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "is-active" : "nav-link LinkStyling"
+          }
+        >
           <span className="navigate-link">Home </span>
         </NavLink>
         / Your cart

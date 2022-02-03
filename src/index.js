@@ -7,13 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
+import AuthProvider from "./contexts/AuthContext";
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
         <PersistGate persistor={persistor}>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </PersistGate>
       </BrowserRouter>
     </React.StrictMode>
