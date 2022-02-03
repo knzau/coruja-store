@@ -1,34 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import SignInComponent from "../../components/SignUp/SignInComponent";
 import SignUpComponent from "../../components/SignUp/SignUpComponent";
-import { Component } from "react";
+import { selectCurrentUser } from "../../redux/user/userSelector";
+import { createStructuredSelector } from "reselect";
 
-class SignInPage extends Component {
-  constructor() {
-    super();
+function SignInPage({ currentUser }) {
+  const [hide, setHide] = useState(false);
+  let navigate = useNavigate();
 
-    this.state = {
-      hide: true,
-    };
-  }
+  useEffect(() => {
+    if (currentUser && currentUser.uid) {
+      return navigate("/myaccount");
+    }
+  }, [currentUser, navigate]);
 
-  handleCreateAccount = () => {
-    this.setState({ hide: false });
-  };
-  handleSignIn = () => {
-    this.setState({ hide: true });
-  };
-
-  render() {
-    return (
-      <div>
-        {this.state.hide ? (
-          <SignInComponent handleCreateAccount={this.handleCreateAccount} />
-        ) : (
-          <SignUpComponent handleSignIn={this.handleSignIn} />
-        )}
-      </div>
-    );
-  }
+  return hide ? (
+    <SignInComponent handleCreateAccount={() => setHide(false)} />
+  ) : (
+    <SignUpComponent handleSignIn={() => setHide(true)} />
+  );
 }
-export default SignInPage;
+
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+
+export default connect(mapStateToProps)(SignInPage);

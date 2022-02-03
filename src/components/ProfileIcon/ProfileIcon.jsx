@@ -6,11 +6,11 @@ import sprite from "../../svg-icons/sprite.svg";
 
 import "../../sass/app.scss";
 
-const WishlistIcon = ({ wishlistItemsCount }) => {
+const ProfileIcon = ({ wishlistItemsCount }) => {
   return (
     <div className="wishlist-icon-container">
       <svg className="heart-icon heartbeat">
-        <use href={sprite + "#icon-heart-outlined"}></use>
+        <use href={sprite + "#icon-person_outline"}></use>
       </svg>
       {wishlistItemsCount ? (
         <span className="wishlist-count bounce-top">{wishlistItemsCount}</span>
@@ -23,4 +23,4 @@ const mapStateToProps = createStructuredSelector({
   wishlistItemsCount: selectwishlistItemsCount,
 });
 
-export default connect(mapStateToProps)(WishlistIcon);
+export default connect(mapStateToProps)(ProfileIcon);

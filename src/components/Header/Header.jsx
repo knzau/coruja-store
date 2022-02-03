@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../coruja-logo.png";
 import CartIcon from "../CartICon/CartIcon";
 import CartDropDown from "../CartDropDown/CartDropDown";
-import WishlistIcon from "../WishlistIcon/WishlistIcon";
+import ProfileIcon from "../ProfileIcon/ProfileIcon";
 import { selectCurrentUser } from "../../redux/user/userSelector.js";
 import { selectCartHidden } from "../../redux/cart/cartSelector";
 import { Link, NavLink } from "react-router-dom";
@@ -30,8 +30,9 @@ const Header = ({ currentUser, hidden }) => {
           <li className="nav-menu-item">
             <NavLink
               to="/shop/men"
-              activeClassName="is-active"
-              className="nav-link"
+              className={({ isActive }) =>
+                isActive ? "is-active" : "nav-link"
+              }
             >
               Men
             </NavLink>
@@ -39,8 +40,9 @@ const Header = ({ currentUser, hidden }) => {
           <li className="nav-menu-item">
             <NavLink
               to="/contact-us"
-              activeClassName="is-active"
-              className="nav-link"
+              className={({ isActive }) =>
+                isActive ? "is-active" : "nav-link"
+              }
             >
               Contacts
             </NavLink>
@@ -55,11 +57,11 @@ const Header = ({ currentUser, hidden }) => {
       <div className="account-features">
         {currentUser ? (
           <Link to="/myaccount">
-            <WishlistIcon className="icons" />
+            <ProfileIcon className="icons" />
           </Link>
         ) : (
           <Link to="/signin">
-            <WishlistIcon className="icons" />
+            <ProfileIcon className="icons" />
           </Link>
         )}
 

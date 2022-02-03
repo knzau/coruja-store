@@ -4,12 +4,12 @@ const selectUser = state => state.user;
 
 export const selectCurrentUser = createSelector(
   [selectUser],
-  (user) => user.currentUser
+  (user) => user && user.currentUser
 );
 
 export const selectCurrentUserName = createSelector(
   [selectCurrentUser],
-  (user) => user.currentUser.displayName
-)
+  (user) => user && user.currentUser?.displayName
+);
 
 

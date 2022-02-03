@@ -1,13 +1,19 @@
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectwishlistItemsCount } from "../../redux/wishlist/wishlistSelector.js";
+
 import "./MyAccountStyles.scss";
 
 const MyAccount = ({ wishlistItemsCount }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    auth.signOut();
+    navigate("/signin");
+  };
   return (
     <div className="my-account">
       <h1 className="page-link">
@@ -27,7 +33,7 @@ const MyAccount = ({ wishlistItemsCount }) => {
         <div className="account-details">
           <h2 className="header-wishlist">Account Details</h2>
           <p className="text-my-account">Welcome your name</p>
-          <CustomButton onClick={() => auth.signOut}>Log out</CustomButton>
+          <CustomButton onClick={() => handleLogout}>Log out</CustomButton>
         </div>
       </div>
     </div>
