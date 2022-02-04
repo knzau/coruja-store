@@ -1,11 +1,9 @@
-
 import { searchCollectionItem } from "./shopUtils";
 import ShopActionTypes from "./shopTypes";
-import SHOP_DATA from "../../SHOP_DATA";
 
 const INITIAL_STATE = {
   searchFieldHidden: true,
-  collections: SHOP_DATA,
+  collections: {},
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {

@@ -2,19 +2,25 @@ import React from "react";
 import { selectProductDetail } from "../../redux/collectionItemDetail/collectionItemSelector.js";
 import { selectCollection } from "../../redux/shop/shopSelector.js";
 import { connect } from "react-redux";
+import { withRouter } from "../../utils.js";
 import { NavLink } from "react-router-dom";
 import CollectionItem from "../../components/CollectionItem/CollectionItem";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
 
 import "../../sass/app.scss";
 
-const CollectionPage = ({ collection, productDetailItem, match }) => {
-  const { items, title } = collection;
+const CollectionPage = ({ collection, productDetailItem, router }) => {
+  const { items, title } = collection || {};
 
   return (
     <div className="collection-page">
       <h1 className="page-link">
-        <NavLink to="/" className="LinkStyling" activeClassName="is-active">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "is-active" : "nav-link LinkStyling"
+          }
+        >
           <span className="navigate-link">Home </span>
         </NavLink>
         / {title.toUpperCase()}
@@ -32,8 +38,8 @@ const CollectionPage = ({ collection, productDetailItem, match }) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  collection: selectCollection(ownProps.match.params.collectionId)(state),
+  collection: selectCollection(ownProps.router.params?.collectionId)(state),
   productDetailItem: selectProductDetail,
 });
 
-export default connect(mapStateToProps)(CollectionPage);
+export default withRouter(connect(mapStateToProps)(CollectionPage));

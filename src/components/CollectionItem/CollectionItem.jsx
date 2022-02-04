@@ -19,10 +19,11 @@ const CollectionItem = ({
   addItem,
   addItemWishlist,
   removeWishlistItem,
-  match,
   openCollectionItem,
+  router,
 }) => {
-  const { imageUrl, name, price } = item;
+  const { location } = router;
+  const { imageUrl, name, price } = item || {};
   return (
     <div className="collection-item-wrapper">
       <div className="collection-item">
@@ -34,7 +35,7 @@ const CollectionItem = ({
           style={{ backgroundImage: `url(${imageUrl})` }}
         ></div>
         <div className="heart-icon-wrapper">
-          {match.url === "/iwish" ? (
+          {location.pathname === "/iwish" ? (
             <img
               src={DeleteIcon}
               alt="close"

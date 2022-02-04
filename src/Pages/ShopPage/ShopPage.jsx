@@ -1,54 +1,51 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { withRouter } from "../../utils";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import { connect } from "react-redux";
-import LoadSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-import CollectionPage from "../CollectionPage/CollectionPage";
 import { firestore } from "../../firebase/firebase.utils.js";
 import { convertCollectionSnapshotToMap } from "../../firebase/firebase.utils.js";
 import { updateCollections } from "../../redux/shop/shopActions.js";
+import CollectionPage from "../CollectionPage/CollectionPage.jsx";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner.jsx";
+import axios from "axios";
 
-const CollectionPageWithSpinner = LoadSpinner(CollectionPage);
+const CollectionPageWithSpinner = LoadingSpinner(CollectionPage);
 
-class ShopPage extends React.Component {
-  unsubscribeFromSnapshot = null;
-  state = {
-    loading: true,
-  };
-  componentDidMount() {
-    const { updateCollections } = this.props;
-    const collectionRef = firestore.collection("collections");
-    console.log(collectionRef);
+function ShopPage({ updateCollections }) {
+  const [loading, setLoading] = useState(true);
 
-    this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
-      async (snapshot) => {
-        const collectionsMap = convertCollectionSnapshotToMap(snapshot);
-        console.log(collectionsMap);
-        updateCollections(collectionsMap);
-        this.setState({ loading: false });
+  useEffect(() => {
+    (async () => {
+      if (loading) {
+        const collectionRef = await firestore.collection("collections");
+        collectionRef.onSnapshot((snapshot) => {
+          const collectionsMap = convertCollectionSnapshotToMap(snapshot);
+          updateCollections(collectionsMap);
+          console.log(collectionsMap);
+
+          setLoading(false);
+        });
       }
-    );
-  }
+    })();
 
-  render() {
-    const { location } = this.props;
-    const { loading } = this.state;
+    return () => {
+      setLoading(false);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    return (
-      <div>
-        <div className="shop-page">
-          <Routes>
-            <Route
-              path={`${location?.path}/:collectionId`}
-              render={(props) => (
-                <CollectionPageWithSpinner isLoading={loading} {...props} />
-              )}
-            />
-          </Routes>
-        </div>
+  return (
+    <div>
+      <div className="shop-page">
+        <Routes>
+          <Route
+            path=":collectionId"
+            element={<CollectionPageWithSpinner isLoading={loading} />}
+          />
+        </Routes>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const mapDispatchToProps = (dispatch) => ({
@@ -56,4 +53,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updateCollections(collectionsMap)),
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(ShopPage));
+export default connect(null, mapDispatchToProps)(ShopPage);

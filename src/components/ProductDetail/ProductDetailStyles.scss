@@ -34,7 +34,7 @@
     transform: translate(-50%, -50%);
     position: absolute;
     width: 50%;
-    height: 70%;
+    min-height: 60vh;
     box-shadow: 0 2rem 4rem rgba(black, 0.2);
     background-color: white;
     border-radius: 3px;
@@ -51,7 +51,7 @@
   }
 
   .popup__left-box {
-    width: 100%;
+    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,15 +1,15 @@
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import CartItem from "../CartItem/CartItem";
-import { withRouter } from "../../utils";
-
+import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectCartItems } from "../../redux/cart/cartSelector";
 import { toggleCartHidden } from "../../redux/cart/cartAction";
 
 import "../../sass/app.scss";
 
-const CartDropDown = ({ cartItems, history, dispatch }) => {
+const CartDropDown = ({ cartItems, dispatch }) => {
+  const navigate = useNavigate();
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
@@ -23,7 +23,7 @@ const CartDropDown = ({ cartItems, history, dispatch }) => {
       </div>
       <CustomButton
         onClick={() => {
-          history.push("/checkout");
+          navigate("/checkout");
           dispatch(toggleCartHidden());
         }}
         className="effect01"
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => ({
   cartItems: selectCartItems(state),
 });
 
-export default withRouter(connect(mapStateToProps)(CartDropDown));
+export default connect(mapStateToProps)(CartDropDown);

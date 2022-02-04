@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { Route, Routes } from "react-router-dom";
 import { connect } from "react-redux";
@@ -24,9 +24,7 @@ import WishlistPage from "./Pages/WishlistPage/WishlistPage";
 import "./sass/app.scss";
 import TopStrip from "./components/TopStrip/TopStrip";
 
-function App({ setCurrentUser, collectionsArray, currentUser }) {
-  const [loading, setLoading] = useState(true);
-
+function App({ setCurrentUser, updateCollections }) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -35,22 +33,13 @@ function App({ setCurrentUser, collectionsArray, currentUser }) {
     return unsubscribe;
   }, [setCurrentUser]);
 
-  // auth.onAuthStateChanged((user) => {
-  //   setCurrentUser(user);
-  // });
-
-  console.log(currentUser);
-
   return (
     <div className="App">
       <TopStrip />
       <HeaderSearchBox />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
-          path="/shop"
-          element={<ShopPage loading={loading} setLoading={setLoading} />}
-        ></Route>
+        <Route path="/shop/*" element={<ShopPage />} />
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/myaccount" element={<MyAccountPage />} />
         <Route path="/iwish" element={<WishlistPage />} />
@@ -71,4 +60,5 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
